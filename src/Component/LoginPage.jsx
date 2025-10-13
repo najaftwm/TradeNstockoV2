@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { motion } from "framer-motion";
 
 const LoginPage = () => {
   const [passwordVisible, setPasswordVisible] = useState(false);

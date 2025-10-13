@@ -33,7 +33,7 @@ export default function Features() {
 
         {/* Title */}
         <div className="text-center mb-6">
-          <h2 className="text-4xl md:text-5xl font-extrabold">Why TNS Trading App?</h2>
+          <h2 className="text-4xl md:text-5xl font-extrabold">Why Choose TNS Trading App?</h2>
         </div>
 
         {/* Subtitle */}

@@ -1,33 +1,33 @@
-
 import React, { useRef, useEffect } from "react";
+import assets from "../assets/assets";
 
 const ReviewsSection = () => {
   const reviews = [
     {
       quote: "We saw a 200% increase in Sales Qualified Leads.",
-      author: "Reza Schott",
-      image: "https://randomuser.me/api/portraits/men/32.jpg",
+      author: "Anurag",
+      image: assets.F1,
     },
     {
       quote:
         "This is the first marketing agency I've worked with where I see results.",
-      author: "Machiel Kunst",
-      image: "https://randomuser.me/api/portraits/women/44.jpg",
+      author: "Danish",
+      image: assets.F2,
     },
     {
       quote: "Amazing service and great results!",
-      author: "Sarah Johnson",
-      image: "https://randomuser.me/api/portraits/men/65.jpg",
+      author: "Sakshi Bhise",
+      image: assets.F3,
     },
     {
       quote: "Highly recommend this agency for lead generation.",
-      author: "John Doe",
-      image: "https://randomuser.me/api/portraits/men/90.jpg",
+      author: "Riya Dubey",
+      image: assets.F4,
     },
     {
       quote: "Transformed our marketing strategy effectively.",
-      author: "Emily Brown",
-      image: "https://randomuser.me/api/portraits/men/20.jpg",
+      author: "Rajan",
+      image: "https://images.unsplash.com/photo-1560347876-aeef00ee58a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     },
   ];
 

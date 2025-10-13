@@ -1,4 +1,4 @@
-import { Instagram, Linkedin } from 'lucide-react'; // Add other icons as needed (e.g., Twitter, Facebook)
+import { Instagram, Facebook, Twitter } from 'lucide-react'; // Add other icons as needed (e.g., Twitter, Facebook)
 import assets from '../assets/assets';
 
 export default function Footer() {
@@ -28,13 +28,13 @@ export default function Footer() {
         {/* Content Wrapper */}
         <div className="relative z-10">
           {/* Logo at the top */}
-          <div className="mb-6 pl-60">
+          {/* <div className="mb-6 pl-60">
             <img
               src={assets.logo}
               alt="TNS Trading Logo"
               className="h-20 w-auto opacity-90"
             />
-          </div>
+          </div> */}
 
           {/* Top Section */}
           <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12 md:ml-10">
@@ -54,7 +54,7 @@ export default function Footer() {
             </div>
 
             {/* Services */}
-            <div className="pl-5 md:ml-20">
+            <div className=" md:ml-20">
               <h3 className="text-white font-semibold mb-4 text-[16px] tracking-wide">
                 Services
               </h3>
@@ -111,9 +111,19 @@ export default function Footer() {
                 href="#"
                 className="p-2 rounded-md bg-[#1a1a1a] hover:bg-[#222] transition-colors"
               >
-                <Linkedin 
+                <Facebook
                   className="text-gray-400 hover:text-white transition" 
                   size={20} // Adjust size as needed
+                />
+                
+              </a>
+              <a
+                href="#"
+                className="p-2 rounded-md bg-[#1a1a1a] hover:bg-[#222] transition-colors"
+              >
+                <Twitter 
+                  className="text-gray-400 hover:text-white transition" 
+                  size={20} // Adjust size as needed (default is 24)
                 />
               </a>
             </div>
