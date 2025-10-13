@@ -17,7 +17,7 @@ export default function HeroSection() {
       ></div>
 
       {/* Content */}
-      <div className="relative flex flex-col lg:flex-row items-center justify-between w-full max-w-[1450px] px-4 z-10 gap-10">
+      <div className="relative flex flex-col lg:flex-row items-center justify-between w-full max-w-[1450px] px-4 sm:px-6 md:px-8 z-10 gap-10">
 
         {/* Left Side - Text */}
         <div className="flex-1 text-left space-y-5 lg:space-y-8">
@@ -45,7 +45,7 @@ export default function HeroSection() {
           </p>
 
           {/* Description */}
-          <p className="text-gray-700 text-lg leading-relaxed max-w-lg">
+          <p className="text-gray-700 text-lg leading-relaxed max-w-lg sm:max-w-full">
             <span className="font-bold text-black">
               TNS - Your All-in-One Trading App
             </span>
@@ -56,26 +56,26 @@ export default function HeroSection() {
           </p>
 
           {/* Stats */}
-          <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-4 sm:space-y-0 sm:space-x-6 mt-6">
+          <div className="flex flex-row flex-wrap sm:flex-nowrap items-center space-x-0 sm:space-x-6 mt-6 gap-4">
             {/* Registered Users */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 flex-1 sm:flex-none">
               <span className="bg-[#1E4A44] text-white rounded-full p-2">
                 <Users size={20} />
               </span>
               <div>
-                <h3 className="text-2xl font-bold text-[#1E4A44]">500K</h3>
-                <p className="text-sm text-gray-600">Registered Users</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#1E4A44]">500K</h3>
+                <p className="text-sm sm:text-base text-gray-600">Registered Users</p>
               </div>
             </div>
 
             {/* Customer Satisfaction */}
-            <div className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2 flex-1 sm:flex-none">
               <span className="bg-[#1E4A44] text-white rounded-full p-2">
                 <CheckCircle size={20} />
               </span>
               <div>
-                <h3 className="text-2xl font-bold text-[#1E4A44]">99%</h3>
-                <p className="text-sm text-gray-600">Customer Satisfaction</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#1E4A44]">99%</h3>
+                <p className="text-sm sm:text-base text-gray-600">Customer Satisfaction</p>
               </div>
             </div>
           </div>
@@ -96,13 +96,15 @@ export default function HeroSection() {
         </div>
 
         {/* Right Side - Girl Image */}
-        <div className="flex-1 flex justify-center lg:justify-end">
+        <div className="flex-1  justify-center lg:flex lg:justify-end hidden">
           <img
             src={assets.girl}
             alt="Girl Illustration"
-            className="w-full max-w-md object-cover"
+            className="w-full max-w-full object-cover" // smaller for mobile
+            style={{ maxWidth: '550px' }} // desktop max width
           />
         </div>
+
       </div>
     </section>
   );
