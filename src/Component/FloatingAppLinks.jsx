@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { Play, MonitorSmartphone } from "lucide-react";
+// eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
-export default function FloatingAppLinks() {
+export default function FloatingAppLinks({ hideOnHeroMobile = false }) {
   const [hoveredIndex, setHoveredIndex] = useState(null);
 
   const links = [
@@ -23,12 +24,19 @@ export default function FloatingAppLinks() {
   return (
     <motion.div
       initial={{ x: 200, opacity: 0 }}
-      animate={{ x: 0, opacity: 1 }}
+      animate={{ 
+        x: 0, 
+        opacity: 1
+      }}
       transition={{
         duration: 1,
         ease: "easeOut",
       }}
-      className="fixed top-1/2 right-0 -translate-y-1/2 flex flex-col items-end gap-3 z-50"
+      style={{
+        pointerEvents: hideOnHeroMobile ? 'none' : 'auto'
+      }}
+      className={`fixed top-1/2 right-0 -translate-y-1/2 flex-col items-end gap-3 z-50 
+        ${hideOnHeroMobile ? 'hidden lg:flex' : 'flex'}`}
     >
       {links.map((link, index) => {
         const isHovered = hoveredIndex === index;

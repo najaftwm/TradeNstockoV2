@@ -2,7 +2,7 @@ import React from "react";
 
 export default function FloatingWhatsAppButton() {
   // Replace with your actual WhatsApp number (country code + number, no + or spaces)
-  // const whatsappNumber = "919876543210"; // Example for India
+  const whatsappNumber = ""; // Example for India
   const whatsappMessage = "Hi, I want to know more about TNS Trading App";
 
   const handleWhatsAppClick = () => {

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Menu, XCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; // eslint-disable-line
 import assets from "../assets/assets";
 
 export default function Navbar() {
@@ -15,15 +15,17 @@ export default function Navbar() {
         duration: 0.8,
         ease: "easeOut",
       }}
-      className="fixed top-7 z-50 bg-[#1E4A44] shadow-xl border-gray-300 rounded-xl max-w-7xl mx-auto left-0 right-0 px-6"
+      className="fixed top-7 z-50 bg-[#1E4A44] shadow-xl border-gray-300 rounded-xl max-w-7xl mx-auto left-0 right-0 px-6 md:px-6 
+                 md:mx-auto md:left-0 md:right-0
+                 max-md:max-w-sm max-md:mx-0 max-md:left-4 max-md:right-auto"
     >
-      <div className="flex items-center justify-between py-4">
+      <div className="flex items-center justify-between py-4 md:py-4 max-md:py-2">
         {/* === Logo === */}
-        <div className="flex items-center ml-1 h-12 bg-[#F8F1E9] p-2 rounded-lg group">
+        <div className="flex items-center ml-1 h-12 bg-[#F8F1E9] p-2 rounded-lg group md:h-12 md:p-2 max-md:h-9 max-md:p-1.5">
           <img
             src={assets.logo}
             alt="Logo"
-            className="h-16 w-auto transform transition-transform duration-500 ease-in-out group-hover:scale-125"
+            className="h-16 w-auto transform transition-transform duration-500 ease-in-out group-hover:scale-125 md:h-16 max-md:h-10"
           />
         </div>
 
@@ -54,9 +56,9 @@ export default function Navbar() {
         {/* === Mobile Menu Toggle === */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-[#F8F1E9] focus:outline-none p-2 bg-[#2A4D44] rounded-full z-60"
+          className="md:hidden text-[#F8F1E9] focus:outline-none p-2 bg-[#2A4D44] rounded-full z-60 max-md:p-1.5 max-md:ml-2"
         >
-          {isOpen ? <XCircle size={30} color="#F8F1E9" /> : <Menu size={30} color="#F8F1E9" />}
+          {isOpen ? <XCircle size={24} color="#F8F1E9" className="md:hidden" /> : <Menu size={24} color="#F8F1E9" className="md:hidden" />}
         </button>
       </div>
 
