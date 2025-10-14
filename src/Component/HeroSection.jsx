@@ -1,5 +1,6 @@
 import assets from "../assets/assets";
 import { Users, CheckCircle } from "lucide-react";
+import TraderUsersBadge from "./TraderUsersBadge";
 
 export default function HeroSection() {
   return (
@@ -18,7 +19,6 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative flex flex-col lg:flex-row items-center justify-between w-full max-w-[1450px] px-4 sm:px-6 md:px-8 z-10 gap-10">
-
         {/* Left Side - Text */}
         <div className="flex-1 text-left space-y-5 lg:space-y-8">
           {/* Badge + Sub-badge */}
@@ -80,31 +80,42 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Start Now Button under stats */}
-          <a
-            href="#"
-            className="group relative overflow-hidden bg-white text-black px-6 py-3 rounded-lg font-semibold inline-block mt-6"
-          >
-            {/* Background fill on hover */}
-            <span className="absolute bottom-0 left-0 w-full h-full bg-[#D67F3C] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
+          {/* ✅ Button + Badge (Mobile only) */}
+          <div className="mt-6 flex items-center space-x-3 lg:hidden">
+            <a
+              href="#"
+              className="group relative overflow-hidden bg-white text-black px-6 py-3 rounded-lg font-semibold inline-block"
+            >
+              {/* Background fill on hover */}
+              <span className="absolute bottom-0 left-0 w-full h-full bg-[#D67F3C] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
 
-            {/* Text */}
-            <span className="relative z-10 group-hover:text-white transition-colors duration-300">
-              Start Now <span className="ml-2 ">→</span>
-            </span>
-          </a>
+              {/* Text */}
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                Start Now <span className="ml-2 ">→</span>
+              </span>
+            </a>
+
+            {/* Mobile badge — smaller beside button */}
+            <div className="scale-75">
+              <TraderUsersBadge small />
+            </div>
+          </div>
+        </div>
+
+        {/* 🔹 Desktop Badge (floats near image) */}
+        <div className="hidden lg:block absolute top-28 left-[58%] -translate-x-1/2 z-20">
+          <TraderUsersBadge />
         </div>
 
         {/* Right Side - Girl Image */}
-        <div className="flex-1  justify-center lg:flex lg:justify-end hidden">
+        <div className="flex-1 justify-center lg:flex lg:justify-end hidden">
           <img
             src={assets.girl}
             alt="Girl Illustration"
-            className="w-full max-w-full object-cover" // smaller for mobile
-            style={{ maxWidth: '550px' }} // desktop max width
+            className="w-full max-w-full object-cover"
+            style={{ maxWidth: "550px" }}
           />
         </div>
-
       </div>
     </section>
   );

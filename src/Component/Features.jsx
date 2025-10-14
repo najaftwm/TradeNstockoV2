@@ -15,7 +15,7 @@ export default function Features() {
     { title: "Instant Withdrawal", description: "You will get the instant withdrawal", icon: Rocket },
     { title: "Easily Manageable Account", description: "We provide a hassle-free trading app which is easy to use", icon: UserCheck },
     { title: "24x7 Call Support", description: "We are available 24x7 for support during trading or any transaction", icon: Headphones },
-    { title: "Tax Free Trading", description: "Your trades are tax free with us and no ICTI charges apply", icon: TrendingUp },
+    
     { title: "Bank-Grade Data Security", description: "We protect your data like a vault. Your personal and financial info stays private-always.", icon: Lock },
     { title: "100% Trust & Transparency", description: "Trade with confidence knowing your wallet and data are fully secure.", icon: Shield },
   ];

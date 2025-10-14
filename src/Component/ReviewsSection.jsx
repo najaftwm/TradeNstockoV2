@@ -4,30 +4,40 @@ import assets from "../assets/assets";
 const ReviewsSection = () => {
   const reviews = [
     {
-      quote: "We saw a 200% increase in Sales Qualified Leads.",
-      author: "Anurag",
+      quote:
+        "We saw a 200% increase in Sales Qualified Leads within just a few months of working with the team. Their strategies are data-driven, creative, and truly effective.",
+      author: "Anurag Yadav",
+      designation: "Founder, Alpha Capital",
       image: assets.F1,
     },
     {
       quote:
-        "This is the first marketing agency I've worked with where I see results.",
-      author: "Danish",
+        "This is the first marketing agency I've worked with where I actually saw measurable results. Their transparency and communication are top-notch!",
+      author: "Danish Zehen",
+      designation: "Marketing Head, BlueOcean Traders",
       image: assets.F2,
     },
     {
-      quote: "Amazing service and great results!",
+      quote:
+        "Amazing service and great results! From campaign planning to execution, everything was seamless. Their creative ad strategies and analytics-driven approach have helped us.",
       author: "Sakshi Bhise",
+      designation: "Financial Analyst, FutureGrow",
       image: assets.F3,
     },
     {
-      quote: "Highly recommend this agency for lead generation.",
+      quote:
+        "Highly recommend this agency for lead generation. Their deep understanding of audience behavior and market trends helped us target the right customers.",
       author: "Riya Dubey",
+      designation: "Operations Lead, BrightPath Investments",
       image: assets.F4,
     },
     {
-      quote: "Transformed our marketing strategy effectively.",
+      quote:
+        "They completely transformed our marketing strategy. We were struggling to generate consistent leads before, but now our pipeline is full.",
       author: "Rajan",
-      image: "https://images.unsplash.com/photo-1560347876-aeef00ee58a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+      designation: "CEO, NexGen Holdings",
+      image:
+        "https://images.unsplash.com/photo-1560347876-aeef00ee58a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
     },
   ];
 
@@ -128,6 +138,9 @@ const ReviewsSection = () => {
               <div>
                 <p className="font-bold text-lg sm:text-xl text-gray-900">
                   {review.author}
+                </p>
+                <p className="text-gray-500 text-sm sm:text-base font-medium mt-1">
+                  {review.designation}
                 </p>
               </div>
             </div>
