@@ -15,8 +15,6 @@ const LoginPage = () => {
     whatsapp: "",
     state: "",
     language: "",
-    password: "",
-    confirmPassword: "",
   });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -33,7 +31,6 @@ const LoginPage = () => {
   const CUSTOMER_ID = "C-769541B7B67C491";
 
   const phoneRegex = /^\d{10}$/;
-  const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
 
   const languages = [
     "English",
@@ -46,6 +43,16 @@ const LoginPage = () => {
     "Gujarati",
     "Marathi",
     "Punjabi",
+  ];
+
+  const states = [
+    "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh",
+    "Goa", "Gujarat", "Haryana", "Himachal Pradesh", "Jharkhand", "Karnataka",
+    "Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya",
+    "Mizoram", "Nagaland", "Odisha", "Punjab", "Rajasthan", "Sikkim",
+    "Tamil Nadu", "Telangana", "Tripura", "Uttar Pradesh", "Uttarakhand",
+    "West Bengal", "Delhi", "Puducherry", "Chandigarh", "Jammu and Kashmir",
+    "Ladakh"
   ];
 
   const handleInputChange = (e) => {
@@ -67,13 +74,6 @@ const LoginPage = () => {
       newErrors.whatsapp = "Valid 10-digit WhatsApp number is required";
     if (!formData.state.trim()) newErrors.state = "State is required";
     if (!formData.language) newErrors.language = "Please select a language";
-    if (!formData.password)
-      newErrors.password = "Password is required";
-    else if (!passwordRegex.test(formData.password))
-      newErrors.password =
-        "Password must contain at least 8 characters, one letter and one number";
-    if (formData.password !== formData.confirmPassword)
-      newErrors.confirmPassword = "Passwords do not match";
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -140,11 +140,12 @@ const LoginPage = () => {
             email: formData.email,
             state: formData.state,
             language: formData.language,
-            password: formData.password,
           }
         );
         toast.success("Lead submitted successfully!");
-        setSuccessMessage( "Successfully registered! Our team will reach out to you shortly to help you get started.");
+        setSuccessMessage(
+          "Successfully registered! Our team will reach out to you shortly to help you get started."
+        );
         setShowOTPModal(false);
         setOtp("");
         setOtpError("");
@@ -180,63 +181,58 @@ const LoginPage = () => {
   return (
     <div id="register" className="min-h-screen bg-[#eceae0] flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-10">
       
-   {/* LEFT SECTION */}
-<motion.div
-  initial={{ opacity: 0, y: 60, scale: 0.95 }}
-  whileInView={{ opacity: 1, y: 0, scale: 1 }}
-  transition={{
-    duration: 1.2,
-    ease: [0.22, 1, 0.36, 1],
-  }}
-  viewport={{ once: true, amount: 0.3 }}
-  className="md:w-1/2 flex flex-col items-center justify-center text-center space-y-6"
->
-  <h1 className="text-4xl md:text-5xl font-extrabold text-[#4a4a2e] leading-tight mb-4">
-    Discover the Future of <span className="text-blue-700">Trading</span>
-  </h1>
+      {/* LEFT SECTION */}
+      <motion.div
+        initial={{ opacity: 0, y: 60, scale: 0.95 }}
+        whileInView={{ opacity: 1, y: 0, scale: 1 }}
+        transition={{
+          duration: 1.2,
+          ease: [0.22, 1, 0.36, 1],
+        }}
+        viewport={{ once: true, amount: 0.3 }}
+        className="md:w-1/2 flex flex-col items-center justify-center text-center space-y-6"
+      >
+        <h1 className="text-4xl md:text-5xl font-extrabold text-[#4a4a2e] leading-tight mb-4">
+          Discover the Future of <span className="text-blue-700">Trading</span>
+        </h1>
 
-  {/* ✅ QR + Button Wrapper */}
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    whileInView={{ opacity: 1, y: 0 }}
-    transition={{
-      duration: 1,
-      delay: 0.3,
-      ease: [0.22, 1, 0.36, 1],
-    }}
-    viewport={{ once: true }}
-    className="flex flex-col items-center justify-center"
-  >
-    {/* QR Code */}
-    <a
-      href="/app-tradenstocko.apk" // your real APK link
-      download
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <img
-        src={assets.QR}
-        alt="QR Code"
-        className="w-56 h-56 md:w-72 md:h-72 object-contain rounded-lg shadow-lg 
-                   hover:scale-105 transition-transform duration-300 border border-gray-300 bg-white"
-      />
-    </a>
-
-    {/* Download App Button */}
-    <a
-      href="/app-tradenstocko.apk" // same APK link
-      download
-      target="_blank"
-      rel="noopener noreferrer"
-      className="mt-5 inline-block bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md 
-                 hover:bg-blue-800 transition duration-300"
-    >
-      Download App
-    </a>
-  </motion.div>
-</motion.div>
-
-
+        {/* ✅ QR + Button Wrapper */}
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            duration: 1,
+            delay: 0.3,
+            ease: [0.22, 1, 0.36, 1],
+          }}
+          viewport={{ once: true }}
+          className="flex flex-col items-center justify-center"
+        >
+          <a
+            href="/app-tradenstocko.apk"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <img
+              src={assets.QR}
+              alt="QR Code"
+              className="w-56 h-56 md:w-72 md:h-72 object-contain rounded-lg shadow-lg 
+                        hover:scale-105 transition-transform duration-300 border border-gray-300 bg-white"
+            />
+          </a>
+          <a
+            href="/app-tradenstocko.apk"
+            download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-5 inline-block bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md 
+                      hover:bg-blue-800 transition duration-300"
+          >
+            Download App
+          </a>
+        </motion.div>
+      </motion.div>
 
       {/* RIGHT SECTION */}
       <div className="md:w-1/2 w-full bg-[#f8f8f4] rounded-xl shadow-lg p-6 md:p-7 transition duration-300">
@@ -267,7 +263,6 @@ const LoginPage = () => {
                 { name: "email", placeholder: "Email Address", type: "email" },
                 { name: "phone", placeholder: "Phone (10 digits)" },
                 { name: "whatsapp", placeholder: "WhatsApp (10 digits)" },
-                { name: "state", placeholder: "State" },
               ].map((input) => (
                 <div key={input.name}>
                   <input
@@ -289,7 +284,28 @@ const LoginPage = () => {
                 </div>
               ))}
 
-              {/* Language */}
+              {/* State Dropdown */}
+              <select
+                name="state"
+                value={formData.state}
+                onChange={handleInputChange}
+                disabled={isSubmitting}
+                className={`w-full border ${
+                  errors.state ? "border-red-400" : "border-gray-300"
+                } rounded-md p-2.5 md:p-3 text-sm text-gray-700 focus:ring-2 focus:ring-blue-400 outline-none`}
+              >
+                <option value="">Select State</option>
+                {states.map((st) => (
+                  <option key={st} value={st}>
+                    {st}
+                  </option>
+                ))}
+              </select>
+              {errors.state && (
+                <p className="text-red-500 text-xs mt-1">{errors.state}</p>
+              )}
+
+              {/* Language Dropdown */}
               <select
                 name="language"
                 value={formData.language}
@@ -309,30 +325,6 @@ const LoginPage = () => {
               {errors.language && (
                 <p className="text-red-500 text-xs mt-1">{errors.language}</p>
               )}
-
-              {/* Passwords */}
-              {["password", "confirmPassword"].map((field) => (
-                <div key={field}>
-                  <input
-                    type={passwordVisible ? "text" : "password"}
-                    name={field}
-                    value={formData[field]}
-                    onChange={handleInputChange}
-                    placeholder={
-                      field === "password"
-                        ? "Password"
-                        : "Confirm Password"
-                    }
-                    disabled={isSubmitting}
-                    className={`w-full border ${
-                      errors[field] ? "border-red-400" : "border-gray-300"
-                    } rounded-md p-2.5 md:p-3 text-sm focus:ring-2 focus:ring-blue-400 outline-none`}
-                  />
-                  {errors[field] && (
-                    <p className="text-red-500 text-xs mt-1">{errors[field]}</p>
-                  )}
-                </div>
-              ))}
 
               <button
                 type="submit"
