@@ -13,7 +13,7 @@ export default function FloatingWhatsAppButton() {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-50">
+    <div className="fixed bottom-8 left-8 z-50">
       <button
         onClick={handleWhatsAppClick}
         className="group relative bg-[#25D366] hover:bg-[#1ebe5b] text-white rounded-full p-4 shadow-2xl transform transition-all duration-300 hover:scale-110"
