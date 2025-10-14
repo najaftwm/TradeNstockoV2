@@ -3,12 +3,14 @@ import Navbar from './Component/Navbar'
 import { BrowserRouter as Router ,Route, Routes } from 'react-router-dom'
 import Home from './Pages/Home'
 import Footer from './Component/Footer'
+import FloatingAppLinks from './Component/FloatingAppLinks'
 
 
 const App = () => {
   return (
     <Router>
       <Navbar/>
+      <FloatingAppLinks/>
 
       <Routes>
         <Route path='/' element={<Home/>} />
