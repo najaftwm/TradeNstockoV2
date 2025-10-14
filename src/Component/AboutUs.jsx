@@ -1,72 +1,86 @@
-import { Phone } from "lucide-react";
-import assets from "../assets/assets";
+import React from "react";
+import { motion } from "framer-motion";
 
-export default function AboutUs() {
+const steps = [
+  {
+    number: "01",
+    title: "Visit TradeStocko",
+    description: "Explore the platform and discover the future of trading.",
+  },
+  {
+    number: "02",
+    title: "Download the App",
+    description: "Get the TradeStocko app for instant access to the markets.",
+  },
+  {
+    number: "03",
+    title: "Register Your Account",
+    description: "Sign up quickly with your basic details — no paperwork required.",
+  },
+  {
+    number: "04",
+    title: "Start Trading",
+    description: "Fund your account and begin trading seamlessly anytime, anywhere.",
+  },
+];
+
+export default function HowItWorks() {
   return (
-    <section id="about" className="bg-[#EDE8D0] text-black min-h-screen flex flex-col justify-center py-16">
-      <div className="container mx-auto px-6">
+    <section id="aboutus" className="bg-[#EDE8D0] py-24 flex flex-col items-center">
+      <motion.h2
+        initial={{ opacity: 0, y: 40 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8 }}
+        viewport={{ once: true }}
+        className="text-4xl font-extrabold text-black mb-3"
+      >
+        How <span className="text-yellow-600">TradeStocko</span> Works
+      </motion.h2>
+      <p className="text-gray-700 text-center mb-14">
+        Get started in just a few easy steps — no hassle, no delay.
+      </p>
 
-        {/* Hero Image */}
-        <div className="flex justify-center mb-12">
-          <div className="w-full max-w-md h-32 rounded-lg overflow-hidden shadow-lg">
-            <img
-              src={assets.chart}
-              alt="Trading Chart"
-              className="w-full h-full object-cover opacity-80"
-            />
-          </div>
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto px-6">
+        {steps.map((step, index) => (
+          <motion.div
+            key={index}
+            initial={{ opacity: 0, y: 60 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 1,
+              delay: index * 0.2,
+              ease: [0.22, 1, 0.36, 1],
+            }}
+            viewport={{ once: true }}
+            className="relative bg-white text-center px-8 pt-14 pb-10 rounded-[1.8rem] shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_25px_rgba(0,0,0,0.25)] transition-all duration-500"
+            style={{
+              borderBottomLeftRadius: "1rem",
+              borderBottomRightRadius: "1rem",
+              borderTopLeftRadius: "2rem",
+              borderTopRightRadius: "2rem",
+            }}
+          >
+            {/* STEP Circle */}
+            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
+              <div className="flex flex-col items-center">
+                <span className="text-sm font-bold text-gray-600 mb-1">
+                  STEP
+                </span>
+                <div className="bg-yellow-500 text-blue-900 font-bold rounded-full w-14 h-14 flex items-center justify-center text-lg border-4 border-[#0071A4] shadow-md">
+                  {step.number}
+                </div>
+              </div>
+            </div>
 
-        {/* Title */}
-        <div className="text-center mb-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold">
-            About <span className="text-yellow-600">TradeStocko App</span>
-          </h1>
-        </div>
-
-        {/* Description */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <p className="text-gray-800 text-lg leading-relaxed">
-            Welcome to the <span className="text-yellow-600 font-semibold">Best TNS Trading Platform</span>. 
-            We empower traders to easily customize their portfolios. Our platform provides easy access to a wide range of markets with professional tools for seamless trading.
-          </p>
-        </div>
-
-        {/* Stats Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-
-          {/* Stat 1 */}
-          <div className="border border-gray-300 rounded-lg p-8 text-center transform transition-transform duration-300 hover:scale-105 hover:border-yellow-600 bg-white shadow-md">
-            <h2 className="text-5xl font-bold mb-3">5,000</h2>
-            <p className="text-yellow-600 font-semibold text-lg">Trusted Traders</p>
-          </div>
-
-          {/* Stat 2 */}
-          <div className="border border-gray-300 rounded-lg p-8 text-center transform transition-transform duration-300 hover:scale-105 hover:border-yellow-600 bg-white shadow-md">
-            <h2 className="text-5xl font-bold mb-3">10cr.</h2>
-            <p className="text-yellow-600 font-semibold text-lg">Brokerage Saved</p>
-          </div>
-
-          {/* Stat 3 */}
-          <div className="border border-gray-300 rounded-lg p-8 text-center transform transition-transform duration-300 hover:scale-105 hover:border-yellow-600 bg-white shadow-md">
-            <h2 className="text-5xl font-bold mb-3">10</h2>
-            <p className="text-yellow-600 font-semibold text-lg">Years of Legacy</p>
-          </div>
-
-          {/* Stat 4 */}
-          <div className="border border-gray-300 rounded-lg p-8 text-center transform transition-transform duration-300 hover:scale-105 hover:border-yellow-600 bg-white shadow-md">
-            <h2 className="text-5xl font-bold mb-3">24/7</h2>
-            <p className="text-yellow-600 font-semibold text-lg">Instant Support</p>
-          </div>
-
-        </div>
-      </div>
-
-      {/* Floating Call Button */}
-      <div className="fixed bottom-8 left-8 z-50">
-        <button className="bg-green-500 hover:bg-green-600 text-white rounded-full p-4 shadow-lg transform transition-transform duration-300 hover:scale-110">
-          <Phone className="w-6 h-6" />
-        </button>
+            {/* Card Content */}
+            <h3 className="mt-8 text-lg font-bold text-black">
+              {step.title}
+            </h3>
+            <p className="text-gray-700 mt-3 leading-relaxed">
+              {step.description}
+            </p>
+          </motion.div>
+        ))}
       </div>
     </section>
   );

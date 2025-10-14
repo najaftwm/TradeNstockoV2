@@ -1,45 +1,78 @@
-import React, { useRef, useEffect } from "react";
+import React, { useRef, useEffect, useState } from "react";
+import { Star } from "lucide-react";
 import assets from "../assets/assets";
 
 const ReviewsSection = () => {
-  const reviews = [
+  // === STATE FOR ACTIVE TAB ===
+  const [activeTab, setActiveTab] = useState("all");
+
+  // === ALL REVIEWS ===
+  const allReviews = [
     {
       quote:
         "We saw a 200% increase in Sales Qualified Leads within just a few months of working with the team. Their strategies are data-driven, creative, and truly effective.",
       author: "Anurag Yadav",
       designation: "Founder, Alpha Capital",
       image: assets.F1,
+      rating: 5,
     },
     {
       quote:
-        "This is the first marketing agency I've worked with where I actually saw measurable results. Their transparency and communication are top-notch!",
-      author: "Danish Zehen",
-      designation: "Marketing Head, BlueOcean Traders",
-      image: assets.F2,
-    },
-    {
-      quote:
-        "Amazing service and great results! From campaign planning to execution, everything was seamless. Their creative ad strategies and analytics-driven approach have helped us.",
+        "Amazing service and great results! From campaign planning to execution, everything was seamless.",
       author: "Sakshi Bhise",
       designation: "Financial Analyst, FutureGrow",
       image: assets.F3,
+      rating: 5,
     },
     {
       quote:
-        "Highly recommend this agency for lead generation. Their deep understanding of audience behavior and market trends helped us target the right customers.",
-      author: "Riya Dubey",
-      designation: "Operations Lead, BrightPath Investments",
+        "Trading with TNS has completely changed my results — smooth UI, excellent insights, and consistent profits!",
+      author: "Rahul Mehta",
+      designation: "Professional Trader",
+      image: assets.F2,
+      rating: 5,
+    },
+    {
+      quote:
+        "The platform is fast and reliable. The analytics tools helped me refine my trading strategy massively.",
+      author: "Priya Sharma",
+      designation: "Full-Time Trader",
       image: assets.F4,
-    },
-    {
-      quote:
-        "They completely transformed our marketing strategy. We were struggling to generate consistent leads before, but now our pipeline is full.",
-      author: "Rajan",
-      designation: "CEO, NexGen Holdings",
-      image:
-        "https://images.unsplash.com/photo-1560347876-aeef00ee58a1?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80",
+      rating: 4,
     },
   ];
+
+  // === TRADER REVIEWS ===
+  const traderReviews = [
+    {
+      quote:
+        "Trading with TNS has completely changed my results — smooth UI, excellent insights, and consistent profits!",
+      author: "Rahul Mehta",
+      designation: "Professional Trader",
+      image: assets.T1,
+      rating: 5,
+    },
+    {
+      quote:
+        "The platform is fast and reliable. The analytics tools helped me refine my trading strategy massively.",
+      author: "Priya Sharma",
+      designation: "Full-Time Trader",
+      image: assets.T2,
+      rating: 4,
+    },
+    {
+      quote:
+        "Hands down one of the best trading apps out there — support is quick and the execution is flawless.",
+      author: "Vikram Singh",
+      designation: "Swing Trader",
+      image:
+        "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=500&q=80",
+      rating: 5,
+    },
+  ];
+
+  // === CHOOSE REVIEWS BASED ON TAB ===
+  const reviews = activeTab === "all" ? allReviews : traderReviews;
 
   const containerRef = useRef(null);
   const isDragging = useRef(false);
@@ -49,6 +82,7 @@ const ReviewsSection = () => {
   const lastX = useRef(0);
   const momentumID = useRef(null);
 
+  // === SCROLL DRAG + MOMENTUM EFFECT ===
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -102,11 +136,11 @@ const ReviewsSection = () => {
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerup", onPointerUp);
     };
-  }, []);
+  }, [activeTab]); // ✅ reattach listeners when tab changes
 
   return (
     <div className="reviews-section bg-gray-100 py-5 px-4 md:py-20">
-      {/* Heading */}
+      {/* === Heading === */}
       <div className="text-center mb-10 md:mb-12">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800">
           What Our Clients Say
@@ -116,10 +150,37 @@ const ReviewsSection = () => {
         </p>
       </div>
 
-      {/* Scrollable container */}
+      {/* === Tabs === */}
+      <div className="flex justify-center mb-8">
+        <div className="bg-white rounded-full shadow-md p-1 flex gap-1">
+          <button
+            onClick={() => setActiveTab("all")}
+            className={`px-6 py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
+              activeTab === "all"
+                ? "bg-[#1E4A44] text-white shadow-md"
+                : "text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            All Reviews
+          </button>
+          <button
+            onClick={() => setActiveTab("traders")}
+            className={`px-6 py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
+              activeTab === "traders"
+                ? "bg-[#1E4A44] text-white shadow-md"
+                : "text-gray-600 hover:bg-gray-200"
+            }`}
+          >
+            Trader Reviews
+          </button>
+        </div>
+      </div>
+
+      {/* === Scrollable Review Cards === */}
       <div
+        key={activeTab}
         ref={containerRef}
-        className="reviews-container flex gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 md:px-10 overflow-x-auto select-none cursor-grab active:cursor-grabbing"
+        className="reviews-container flex gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 md:px-10 overflow-x-auto select-none cursor-grab active:cursor-grabbing transition-all duration-500"
       >
         {reviews.map((review, index) => (
           <div
@@ -129,6 +190,7 @@ const ReviewsSection = () => {
             <p className="text-base sm:text-xl md:text-2xl text-gray-800 font-semibold mb-6 sm:mb-8 leading-relaxed">
               “{review.quote}”
             </p>
+
             <div className="flex items-center gap-4 sm:gap-5">
               <img
                 src={review.image}
@@ -136,9 +198,23 @@ const ReviewsSection = () => {
                 className="rounded-full w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-cover border-4 border-gray-100"
               />
               <div>
-                <p className="font-bold text-lg sm:text-xl text-gray-900">
-                  {review.author}
-                </p>
+                <div className="flex items-center gap-2">
+                  <p className="font-bold text-lg sm:text-xl text-gray-900">
+                    {review.author}
+                  </p>
+                  <div className="flex">
+                    {[...Array(5)].map((_, i) => (
+                      <Star
+                        key={i}
+                        className={`w-4 h-4 sm:w-5 sm:h-5 ${
+                          i < review.rating
+                            ? "text-yellow-400 fill-yellow-400"
+                            : "text-gray-300"
+                        }`}
+                      />
+                    ))}
+                  </div>
+                </div>
                 <p className="text-gray-500 text-sm sm:text-base font-medium mt-1">
                   {review.designation}
                 </p>

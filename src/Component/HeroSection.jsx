@@ -1,6 +1,7 @@
 import assets from "../assets/assets";
 import { Users, CheckCircle } from "lucide-react";
 import TraderUsersBadge from "./TraderUsersBadge";
+import { motion } from "framer-motion";
 
 export default function HeroSection() {
   return (
@@ -19,8 +20,17 @@ export default function HeroSection() {
 
       {/* Content */}
       <div className="relative flex flex-col lg:flex-row items-center justify-between w-full max-w-[1450px] px-4 sm:px-6 md:px-8 z-10 gap-10">
-        {/* Left Side - Text */}
-        <div className="flex-1 text-left space-y-5 lg:space-y-8">
+
+        {/* 🟡 Left Side - Text with animation */}
+        <motion.div
+          initial={{ x: -100, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            duration: 1.1,
+            ease: "easeOut",
+          }}
+          className="flex-1 text-left space-y-5 lg:space-y-8"
+        >
           {/* Badge + Sub-badge */}
           <div className="space-y-1">
             <h4 className="text-yellow-600 font-bold text-2xl uppercase tracking-wider">
@@ -100,14 +110,22 @@ export default function HeroSection() {
               <TraderUsersBadge small />
             </div>
           </div>
-        </div>
+        </motion.div>
 
-        {/* 🔹 Desktop Badge (floats near image) */}
-        <div className="hidden lg:block absolute top-28 left-[58%] -translate-x-1/2 z-20">
+        {/* 🟢 Trader Badge Animation */}
+        <motion.div
+          initial={{ x: -200, opacity: 0 }}
+          animate={{ x: 0, opacity: 1 }}
+          transition={{
+            duration: 1,
+            ease: "easeOut",
+          }}
+          className="hidden lg:block absolute top-28 left-[58%] -translate-x-1/2 z-20"
+        >
           <TraderUsersBadge />
-        </div>
+        </motion.div>
 
-        {/* Right Side - Girl Image */}
+        {/* 🔵 Right Side - Girl Image */}
         <div className="flex-1 justify-center lg:flex lg:justify-end hidden">
           <img
             src={assets.girl}

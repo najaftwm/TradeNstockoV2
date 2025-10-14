@@ -14,6 +14,7 @@ const Home = () => {
         <FloatingWhatsAppButton/>
         <ScrollingText/>
         <Features/>
+        <AboutUs/>
         <LoginPage/>
         <ReviewsSection/>
     </div>
