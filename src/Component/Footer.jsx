@@ -64,7 +64,12 @@ export default function Footer() {
                 Quick Links
               </h3>
               <ul className="space-y-2 text-[14px] text-gray-400 font-medium">
-                <li className="hover:text-white transition">About</li>
+                <li className="hover:text-white transition">
+                  <a href="#home">Home</a>
+                </li>
+                <li className="hover:text-white transition">
+                  <a href="#about">About</a>
+                </li>
                 <li className="hover:text-white transition">Careers</li>
                 <li className="hover:text-white transition">Contact</li>
               </ul>
@@ -112,7 +117,12 @@ export default function Footer() {
                   Quick Links
                 </h3>
                 <ul className="space-y-1 text-[14px] text-gray-400 font-medium">
-                  <li className="hover:text-white transition">About</li>
+                  <li className="hover:text-white transition">
+                    <a href="#home">Home</a>
+                  </li>
+                  <li className="hover:text-white transition">
+                    <a href="#about">About</a>
+                  </li>
                   <li className="hover:text-white transition">Careers</li>
                   <li className="hover:text-white transition">Contact</li>
                 </ul>

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Play, MonitorSmartphone } from "lucide-react";
+import { Smartphone, MonitorSmartphone } from "lucide-react";
 // eslint-disable-next-line no-unused-vars
 import { motion } from "framer-motion";
 
@@ -9,7 +9,7 @@ export default function FloatingAppLinks({ hideOnHeroMobile = false }) {
   const links = [
     {
       name: "Android App",
-      icon: <Play size={32} />, // bigger icon
+      icon: <Smartphone size={31} />, // bigger icon
       color: "#FFD700", // yellow on hover
       href: "/app-tradenstocko.apk", // ✅ replace with actual app link
     },
