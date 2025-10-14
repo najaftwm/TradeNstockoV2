@@ -26,33 +26,37 @@ const steps = [
 
 export default function HowItWorks() {
   return (
-    <section id="aboutus" className="bg-[#EDE8D0] py-24 flex flex-col items-center">
+    <section
+      id="aboutus"
+      className="bg-[#EDE8D0] py-24 flex flex-col items-center justify-center px-6"
+    >
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.8 }}
         viewport={{ once: true }}
-        className="text-4xl font-extrabold text-black mb-3"
+        className="text-4xl font-extrabold text-black mb-3 text-center"
       >
         How <span className="text-yellow-600">TradeStocko</span> Works
       </motion.h2>
-      <p className="text-gray-700 text-center mb-14">
+
+      <p className="text-gray-700 text-center mb-14 max-w-md">
         Get started in just a few easy steps — no hassle, no delay.
       </p>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 max-w-7xl mx-auto px-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-y-20 md:gap-y-16 gap-x-10 max-w-7xl mx-auto">
         {steps.map((step, index) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 60 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{
-              duration: 1,
-              delay: index * 0.2,
+              duration: 0.6,
+              delay: index * 0.15,
               ease: [0.22, 1, 0.36, 1],
             }}
             viewport={{ once: true }}
-            className="relative bg-white text-center px-8 pt-14 pb-10 rounded-[1.8rem] shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_25px_rgba(0,0,0,0.25)] transition-all duration-500"
+            className="relative bg-white text-center px-8 pt-16 pb-12 rounded-[1.8rem] shadow-[0_10px_20px_rgba(0,0,0,0.15)] hover:shadow-[0_15px_25px_rgba(0,0,0,0.25)] transition-all duration-500"
             style={{
               borderBottomLeftRadius: "1rem",
               borderBottomRightRadius: "1rem",
@@ -61,7 +65,7 @@ export default function HowItWorks() {
             }}
           >
             {/* STEP Circle */}
-            <div className="absolute -top-10 left-1/2 transform -translate-x-1/2">
+            <div className="absolute -top-12 left-1/2 transform -translate-x-1/2">
               <div className="flex flex-col items-center">
                 <span className="text-sm font-bold text-gray-600 mb-1">
                   STEP
@@ -73,7 +77,7 @@ export default function HowItWorks() {
             </div>
 
             {/* Card Content */}
-            <h3 className="mt-8 text-lg font-bold text-black">
+            <h3 className="mt-10 text-lg font-bold text-black">
               {step.title}
             </h3>
             <p className="text-gray-700 mt-3 leading-relaxed">

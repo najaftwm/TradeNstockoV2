@@ -3,10 +3,8 @@ import { Star } from "lucide-react";
 import assets from "../assets/assets";
 
 const ReviewsSection = () => {
-  // === STATE FOR ACTIVE TAB ===
   const [activeTab, setActiveTab] = useState("all");
 
-  // === ALL REVIEWS ===
   const allReviews = [
     {
       quote:
@@ -42,7 +40,6 @@ const ReviewsSection = () => {
     },
   ];
 
-  // === TRADER REVIEWS ===
   const traderReviews = [
     {
       quote:
@@ -71,7 +68,6 @@ const ReviewsSection = () => {
     },
   ];
 
-  // === CHOOSE REVIEWS BASED ON TAB ===
   const reviews = activeTab === "all" ? allReviews : traderReviews;
 
   const containerRef = useRef(null);
@@ -82,7 +78,6 @@ const ReviewsSection = () => {
   const lastX = useRef(0);
   const momentumID = useRef(null);
 
-  // === SCROLL DRAG + MOMENTUM EFFECT ===
   useEffect(() => {
     const container = containerRef.current;
     if (!container) return;
@@ -114,7 +109,7 @@ const ReviewsSection = () => {
       isDragging.current = false;
       container.classList.remove("grabbing");
 
-      const deceleration = 0.95;
+      const deceleration = 0.92; // slightly faster momentum
       const animate = () => {
         if (Math.abs(velocity.current) > 0.5) {
           container.scrollLeft -= velocity.current;
@@ -136,12 +131,12 @@ const ReviewsSection = () => {
       window.removeEventListener("pointermove", onPointerMove);
       window.removeEventListener("pointerup", onPointerUp);
     };
-  }, [activeTab]); // ✅ reattach listeners when tab changes
+  }, [activeTab]);
 
   return (
-    <div className="reviews-section bg-gray-100 py-5 px-4 md:py-20">
+    <div className="reviews-section bg-gray-100 py-10 px-3 sm:px-6 md:px-10">
       {/* === Heading === */}
-      <div className="text-center mb-10 md:mb-12">
+      <div className="text-center mb-10">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-extrabold text-gray-800">
           What Our Clients Say
         </h2>
@@ -155,7 +150,7 @@ const ReviewsSection = () => {
         <div className="bg-white rounded-full shadow-md p-1 flex gap-1">
           <button
             onClick={() => setActiveTab("all")}
-            className={`px-6 py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
+            className={`px-5 py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
               activeTab === "all"
                 ? "bg-[#1E4A44] text-white shadow-md"
                 : "text-gray-600 hover:bg-gray-200"
@@ -165,7 +160,7 @@ const ReviewsSection = () => {
           </button>
           <button
             onClick={() => setActiveTab("traders")}
-            className={`px-6 py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
+            className={`px-5 py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
               activeTab === "traders"
                 ? "bg-[#1E4A44] text-white shadow-md"
                 : "text-gray-600 hover:bg-gray-200"
@@ -176,30 +171,30 @@ const ReviewsSection = () => {
         </div>
       </div>
 
-      {/* === Scrollable Review Cards === */}
+      {/* === Review Cards === */}
       <div
-        key={activeTab}
         ref={containerRef}
-        className="reviews-container flex gap-6 sm:gap-8 md:gap-10 px-4 sm:px-6 md:px-10 overflow-x-auto select-none cursor-grab active:cursor-grabbing transition-all duration-500"
+        key={activeTab}
+        className="reviews-container flex gap-5 sm:gap-6 md:gap-10 px-2 sm:px-4 md:px-10 overflow-x-auto select-none cursor-grab active:cursor-grabbing"
       >
         {reviews.map((review, index) => (
           <div
             key={index}
-            className="review-card min-w-[280px] sm:min-w-[400px] md:min-w-[600px] h-[250px] sm:h-[300px] md:h-[360px] bg-white border border-gray-200 rounded-2xl p-6 sm:p-8 md:p-10 shadow-lg flex flex-col justify-between hover:shadow-xl transition-all duration-300"
+            className="review-card min-w-[85%] sm:min-w-[350px] md:min-w-[500px] h-auto bg-white border border-gray-200 rounded-2xl p-5 sm:p-8 md:p-10 shadow-lg flex flex-col justify-between hover:shadow-xl transition-all duration-300"
           >
-            <p className="text-base sm:text-xl md:text-2xl text-gray-800 font-semibold mb-6 sm:mb-8 leading-relaxed">
+            <p className="text-base sm:text-lg md:text-2xl text-gray-800 font-semibold mb-6 leading-relaxed">
               “{review.quote}”
             </p>
 
-            <div className="flex items-center gap-4 sm:gap-5">
+            <div className="flex items-center gap-4">
               <img
                 src={review.image}
                 alt={review.author}
-                className="rounded-full w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 object-cover border-4 border-gray-100"
+                className="rounded-full w-12 h-12 sm:w-14 sm:h-14 md:w-20 md:h-20 object-cover border-4 border-gray-100"
               />
               <div>
-                <div className="flex items-center gap-2">
-                  <p className="font-bold text-lg sm:text-xl text-gray-900">
+                <div className="flex items-center gap-2 flex-wrap">
+                  <p className="font-bold text-base sm:text-lg text-gray-900">
                     {review.author}
                   </p>
                   <div className="flex">
