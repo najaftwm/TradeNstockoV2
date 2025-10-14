@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { motion } from "framer-motion"; // eslint-disable-line
 import assets from "../assets/assets";
 
-const LoginPage = () => {
+const ContactUs = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -176,66 +176,84 @@ const LoginPage = () => {
   };
 
   return (
-    <div id="register" className="min-h-screen bg-[#eceae0] flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-10">
-      
-      {/* LEFT SECTION */}
+    <div className="min-h-screen bg-[#eceae0] pb-12">
+      {/* Contact Image Section */}
       <motion.div
-        initial={{ opacity: 0, y: 60, scale: 0.95 }}
-        whileInView={{ opacity: 1, y: 0, scale: 1 }}
-        transition={{
-          duration: 1.2,
-          ease: [0.22, 1, 0.36, 1],
-        }}
-        viewport={{ once: true, amount: 0.3 }}
-        className="md:w-1/2 flex flex-col items-center justify-center text-center space-y-6"
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, ease: "easeOut" }}
+        className="w-full mb-10"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#4a4a2e] leading-tight mb-4">
-          Discover the Future of <span className="text-blue-700">Trading</span>
-        </h1>
-
-        {/* ✅ QR + Button Wrapper */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            delay: 0.3,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center justify-center"
-        >
-          <a
-            href="/app-tradenstocko.apk"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={assets.QR}
-              alt="QR Code"
-              className="w-56 h-56 md:w-72 md:h-72 object-contain rounded-lg shadow-lg 
-                        hover:scale-105 transition-transform duration-300 border border-gray-300 bg-white"
-            />
-          </a>
-          <a
-            href="/app-tradenstocko.apk"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 inline-block bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md 
-                      hover:bg-blue-800 transition duration-300"
-          >
-            Download App
-          </a>
-        </motion.div>
+        <img
+          src={assets.contact}
+          alt="Contact Us"
+          className="w-full h-[40vh] md:h-[60vh] object-cover shadow-2xl"
+        />
       </motion.div>
 
-      {/* RIGHT SECTION */}
-      <div className="md:w-1/2 w-full bg-[#f8f8f4] rounded-xl shadow-lg p-6 md:p-7 transition duration-300">
-        <h2 className="text-center text-2xl md:text-3xl font-extrabold mb-5 text-[#4a4a2e] tracking-wide drop-shadow-sm">
-          Register
-        </h2>
+      {/* Contact Information Sections */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
+        className="max-w-6xl mx-6 md:mx-auto mb-10"
+      >
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Office Section */}
+          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 bg-[#1E4A44] rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-lg font-bold text-black mb-2">Head Office</h3>
+            <p className="text-gray-600 text-sm">vashi. Navi Mumbai</p>
+          </div>
+
+          {/* Sales & Support Section */}
+          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 bg-[#1E4A44] rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-lg font-bold text-black mb-2">Sales & Support</h3>
+            <p className="text-gray-600 text-sm">-</p>
+          </div>
+
+          {/* Mail Section */}
+          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 ease-in-out">
+            <div className="flex justify-center mb-4">
+              <div className="w-12 h-12 bg-[#1E4A44] rounded-full flex items-center justify-center">
+                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
+                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
+                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+                </svg>
+              </div>
+            </div>
+            <h3 className="text-lg font-bold text-black mb-2">Mail</h3>
+            <p className="text-gray-600 text-sm"></p>
+          </div>
+        </div>
+      </motion.div>
+
+      {/* Contact Form Section */}
+      <motion.div
+        initial={{ opacity: 0, y: 40 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+        className="max-w-2xl mx-6 md:mx-auto bg-[#f8f8f4] rounded-xl shadow-lg p-6 md:p-8"
+      >
+        <h1 className="text-center text-3xl md:text-4xl font-extrabold mb-2 text-[#4a4a2e] tracking-wide">
+          Contact Us
+        </h1>
+        <p className="text-center text-gray-600 mb-6">
+          Fill out the form below and we'll get back to you shortly
+        </p>
 
         {submitError && (
           <p className="text-red-500 text-sm text-center mb-3">{submitError}</p>
@@ -253,7 +271,7 @@ const LoginPage = () => {
           </p>
         ) : (
           <>
-            <form onSubmit={handleSubmit} className="flex flex-col gap-3.5">
+            <form onSubmit={handleSubmit} className="flex flex-col gap-4">
               {/* Inputs */}
               {[
                 { name: "name", placeholder: "Full Name" },
@@ -271,7 +289,7 @@ const LoginPage = () => {
                     disabled={isSubmitting}
                     className={`w-full border ${
                       errors[input.name] ? "border-red-400" : "border-gray-300"
-                    } rounded-md p-2.5 md:p-3 text-sm focus:ring-2 focus:ring-blue-400 outline-none`}
+                    } rounded-md p-3 text-sm focus:ring-2 focus:ring-blue-400 outline-none`}
                   />
                   {errors[input.name] && (
                     <p className="text-red-500 text-xs mt-1">
@@ -282,51 +300,55 @@ const LoginPage = () => {
               ))}
 
               {/* State Dropdown */}
-              <select
-                name="state"
-                value={formData.state}
-                onChange={handleInputChange}
-                disabled={isSubmitting}
-                className={`w-full border ${
-                  errors.state ? "border-red-400" : "border-gray-300"
-                } rounded-md p-2.5 md:p-3 text-sm text-gray-700 focus:ring-2 focus:ring-blue-400 outline-none`}
-              >
-                <option value="">Select State</option>
-                {states.map((st) => (
-                  <option key={st} value={st}>
-                    {st}
-                  </option>
-                ))}
-              </select>
-              {errors.state && (
-                <p className="text-red-500 text-xs mt-1">{errors.state}</p>
-              )}
+              <div>
+                <select
+                  name="state"
+                  value={formData.state}
+                  onChange={handleInputChange}
+                  disabled={isSubmitting}
+                  className={`w-full border ${
+                    errors.state ? "border-red-400" : "border-gray-300"
+                  } rounded-md p-3 text-sm text-gray-700 focus:ring-2 focus:ring-blue-400 outline-none`}
+                >
+                  <option value="">Select State</option>
+                  {states.map((st) => (
+                    <option key={st} value={st}>
+                      {st}
+                    </option>
+                  ))}
+                </select>
+                {errors.state && (
+                  <p className="text-red-500 text-xs mt-1">{errors.state}</p>
+                )}
+              </div>
 
               {/* Language Dropdown */}
-              <select
-                name="language"
-                value={formData.language}
-                onChange={handleInputChange}
-                disabled={isSubmitting}
-                className={`w-full border ${
-                  errors.language ? "border-red-400" : "border-gray-300"
-                } rounded-md p-2.5 md:p-3 text-sm text-gray-700 focus:ring-2 focus:ring-blue-400 outline-none`}
-              >
-                <option value="">Select Language</option>
-                {languages.map((lang) => (
-                  <option key={lang} value={lang}>
-                    {lang}
-                  </option>
-                ))}
-              </select>
-              {errors.language && (
-                <p className="text-red-500 text-xs mt-1">{errors.language}</p>
-              )}
+              <div>
+                <select
+                  name="language"
+                  value={formData.language}
+                  onChange={handleInputChange}
+                  disabled={isSubmitting}
+                  className={`w-full border ${
+                    errors.language ? "border-red-400" : "border-gray-300"
+                  } rounded-md p-3 text-sm text-gray-700 focus:ring-2 focus:ring-blue-400 outline-none`}
+                >
+                  <option value="">Select Language</option>
+                  {languages.map((lang) => (
+                    <option key={lang} value={lang}>
+                      {lang}
+                    </option>
+                  ))}
+                </select>
+                {errors.language && (
+                  <p className="text-red-500 text-xs mt-1">{errors.language}</p>
+                )}
+              </div>
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-[#4a4a2e] text-[#eceae0] font-semibold py-2.5 md:py-3 rounded-md hover:bg-[#3b3b27] transition duration-300 disabled:opacity-50"
+                className="w-full bg-[#4a4a2e] text-[#eceae0] font-semibold py-3 rounded-md hover:bg-[#3b3b27] transition duration-300 disabled:opacity-50"
               >
                 {isSubmitting ? "Sending OTP..." : "Send OTP"}
               </button>
@@ -372,9 +394,10 @@ const LoginPage = () => {
             )}
           </>
         )}
-      </div>
+      </motion.div>
     </div>
   );
 };
 
-export default LoginPage;
+export default ContactUs;
+

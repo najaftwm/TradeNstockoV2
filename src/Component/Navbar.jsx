@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Menu, XCircle } from "lucide-react";
 import { motion } from "framer-motion"; // eslint-disable-line
+import { Link } from "react-router-dom";
 import assets from "../assets/assets";
 
 export default function Navbar() {
@@ -21,36 +22,44 @@ export default function Navbar() {
     >
       <div className="flex items-center justify-between py-4 md:py-4 max-md:py-2">
         {/* === Logo === */}
-        <div className="flex items-center ml-1 h-12 bg-[#F8F1E9] p-2 rounded-lg group md:h-12 md:p-2 max-md:h-9 max-md:p-1.5">
+        <Link to="/" className="flex items-center ml-1 h-12 bg-[#F8F1E9] p-2 rounded-lg group md:h-12 md:p-2 max-md:h-9 max-md:p-1.5">
           <img
             src={assets.logo}
             alt="Logo"
             className="h-16 w-auto transform transition-transform duration-500 ease-in-out group-hover:scale-125 md:h-16 max-md:h-10"
           />
-        </div>
+        </Link>
 
         {/* === Desktop Navigation === */}
         <div className="hidden md:flex items-center space-x-8 mr-6">
           {["Home", "About Us", "Features"].map((item, index) => (
-            <a
+            <Link
               key={index}
-              href={`#${item.toLowerCase().replace(/\s/g, "")}`}
+              to={`/#${item.toLowerCase().replace(/\s/g, "")}`}
               className="relative text-lg text-[#F8F1E9] hover:text-[#D67F3C] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#D67F3C] after:transition-all after:duration-300 hover:after:w-full"
             >
               {item}
-            </a>
+            </Link>
           ))}
 
+          {/* Contact Us Link */}
+          <Link
+            to="/contact-us"
+            className="relative text-lg text-[#F8F1E9] hover:text-[#D67F3C] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#D67F3C] after:transition-all after:duration-300 hover:after:w-full"
+          >
+            Contact Us
+          </Link>
+
           {/* Register Button */}
-          <a
-            href="#register"
+          <Link
+            to="/#register"
             className="group relative overflow-hidden bg-[#F8F1E9] text-[#1E4A44] px-5 py-2 rounded-xl font-semibold"
           >
             <span className="absolute bottom-0 left-0 w-full h-full bg-[#D67F3C] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
             <span className="relative z-10 group-hover:text-white transition-colors duration-300">
               Register
             </span>
-          </a>
+          </Link>
         </div>
 
         {/* === Mobile Menu Toggle === */}
@@ -69,23 +78,30 @@ export default function Navbar() {
         } transition-transform duration-300 ease-in-out z-10`}
       >
         <div className="flex flex-col items-start p-6 space-y-6 mt-16">
-          {["Home", "About Us", "Services"].map((item, index) => (
-            <a
+          {["Home", "About Us", "Features"].map((item, index) => (
+            <Link
               key={index}
-              href="#"
+              to={`/#${item.toLowerCase().replace(/\s/g, "")}`}
               onClick={toggleMenu}
               className="text-[#1E4A44] hover:text-[#D67F3C] text-lg"
             >
               {item}
-            </a>
+            </Link>
           ))}
-          <a
-            href="#register"
+          <Link
+            to="/contact-us"
+            onClick={toggleMenu}
+            className="text-[#1E4A44] hover:text-[#D67F3C] text-lg"
+          >
+            Contact Us
+          </Link>
+          <Link
+            to="/#register"
             onClick={toggleMenu}
             className="bg-[#D67F3C] text-[#F8F1E9] px-4 py-2 rounded-md hover:bg-[#D87A3A]"
           >
             Register
-          </a>
+          </Link>
         </div>
       </div>
     </motion.nav>

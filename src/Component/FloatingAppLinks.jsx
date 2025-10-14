@@ -32,9 +32,6 @@ export default function FloatingAppLinks({ hideOnHeroMobile = false }) {
         duration: 1,
         ease: "easeOut",
       }}
-      style={{
-        pointerEvents: hideOnHeroMobile ? 'none' : 'auto'
-      }}
       className={`fixed top-1/2 right-0 -translate-y-1/2 flex-col items-end gap-3 z-50 
         ${hideOnHeroMobile ? 'hidden lg:flex' : 'flex'}`}
     >

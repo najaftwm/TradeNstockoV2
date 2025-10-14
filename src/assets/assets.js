@@ -9,6 +9,7 @@ import F4 from './F4.jpeg'
 import T1 from './T1.jpeg'
 import T2 from './T2.jpg'
 import QR from './QR.jpeg'
+import contact from './contact.jpg'
 const assets ={
     logo,
     heroBg,
@@ -20,7 +21,8 @@ const assets ={
     F4,
     T1,
     T2,
-    QR
+    QR,
+    contact
 }
 
 export default assets;
