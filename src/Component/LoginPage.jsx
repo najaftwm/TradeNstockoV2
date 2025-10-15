@@ -66,8 +66,6 @@ const LoginPage = () => {
       newErrors.email = "Valid email is required";
     if (!formData.phone || !phoneRegex.test(formData.phone))
       newErrors.phone = "Valid 10-digit Indian phone number is required";
-    if (!formData.whatsapp || !phoneRegex.test(formData.whatsapp))
-      newErrors.whatsapp = "Valid 10-digit WhatsApp number is required";
     if (!formData.state.trim()) newErrors.state = "State is required";
     if (!formData.language) newErrors.language = "Please select a language";
 
@@ -175,7 +173,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div id="register" className="min-h-screen bg-[#EDE8D0] flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-10">
+    <div id="register" className="min-h-screen bg-[#eceae0] flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-10">
       
       {/* LEFT SECTION */}
       <motion.div
@@ -257,7 +255,7 @@ const LoginPage = () => {
               {[
                 { name: "name", placeholder: "Full Name" },
                 { name: "email", placeholder: "Email Address", type: "email" },
-                { name: "phone", placeholder: "WhatsApp (10 digits)" },
+                { name: "phone", placeholder: "Contact (10 digits)" },
                 
               ].map((input) => (
                 <div key={input.name}>

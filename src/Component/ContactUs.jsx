@@ -9,7 +9,6 @@ const ContactUs = () => {
     name: "",
     email: "",
     phone: "",
-    
     state: "",
     language: "",
   });
@@ -67,8 +66,6 @@ const ContactUs = () => {
       newErrors.email = "Valid email is required";
     if (!formData.phone || !phoneRegex.test(formData.phone))
       newErrors.phone = "Valid 10-digit Indian phone number is required";
-    if (!formData.whatsapp || !phoneRegex.test(formData.whatsapp))
-      newErrors.whatsapp = "Valid 10-digit WhatsApp number is required";
     if (!formData.state.trim()) newErrors.state = "State is required";
     if (!formData.language) newErrors.language = "Please select a language";
 
@@ -276,7 +273,7 @@ const ContactUs = () => {
               {[
                 { name: "name", placeholder: "Full Name" },
                 { name: "email", placeholder: "Email Address", type: "email" },
-                { name: "phone", placeholder: "WhatsApp (10 digits)" },
+                { name: "phone", placeholder: "Contact (10 digits)" },
                 
               ].map((input) => (
                 <div key={input.name}>
