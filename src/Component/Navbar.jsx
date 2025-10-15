@@ -16,7 +16,7 @@ export default function Navbar() {
         duration: 0.8,
         ease: "easeOut",
       }}
-      className="fixed top-6 z-50 bg-[#1E4A44] shadow-xl rounded-xl max-w-7xl mx-auto left-0 right-0 px-6 md:px-6 
+      className="fixed top-6 z-[100] bg-[#1E4A44] shadow-xl rounded-xl max-w-7xl mx-auto left-0 right-0 px-6 md:px-6 
                  md:mx-auto md:left-0 md:right-0
                  max-md:max-w-sm max-md:mx-0 max-md:left-4 max-md:right-auto"
     >
@@ -65,7 +65,7 @@ export default function Navbar() {
         {/* === Mobile Menu Toggle === */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-[#F8F1E9] focus:outline-none p-2 bg-[#2A4D44] rounded-full z-60 max-md:p-1.5 max-md:ml-2"
+          className="md:hidden text-[#F8F1E9] focus:outline-none p-2 bg-[#2A4D44] rounded-full relative z-[60] max-md:p-1.5 max-md:ml-2"
         >
           {isOpen ? <XCircle size={24} color="#F8F1E9" className="md:hidden" /> : <Menu size={24} color="#F8F1E9" className="md:hidden" />}
         </button>
@@ -75,7 +75,7 @@ export default function Navbar() {
       <div
         className={`md:hidden fixed top-0 right-0 h-full w-64 bg-[#F8F1E9] shadow-lg transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
-        } transition-transform duration-300 ease-in-out z-10`}
+        } transition-transform duration-300 ease-in-out z-1`}
       >
         <div className="flex flex-col items-start p-6 space-y-6 mt-16">
           {["Home", "About Us", "Features"].map((item, index) => (
