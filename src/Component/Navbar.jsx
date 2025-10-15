@@ -73,7 +73,7 @@ export default function Navbar() {
 
       {/* === Mobile Drawer === */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-64 bg-[#F8F1E9] shadow-lg transform ${
+        className={`md:hidden fixed top-0 right-0 h-full w-48 bg-[#F8F1E9] shadow-lg transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out z-1`}
       >
