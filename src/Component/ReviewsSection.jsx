@@ -8,7 +8,7 @@ const ReviewsSection = () => {
   const allReviews = [
     {
       quote:
-        "We saw a 200% increase in Sales Qualified Leads within just a few months of working with the team. Their strategies are data-driven, creative, and truly effective.",
+        "I love how smooth and reliable TradeNstocko is. The fastest payouts in the market ensure I get my funds instantly. Plus, their 24/7 support is always there to help. A must-try for every trader!",
       author: "Anurag Yadav",
       designation: "Founder, Alpha Capital",
       image: assets.F1,
@@ -16,7 +16,7 @@ const ReviewsSection = () => {
     },
     {
       quote:
-        "Amazing service and great results! From campaign planning to execution, everything was seamless.",
+        "Tradenstocko is hands down the best platform I’ve used! From multiple trading options to a user-friendly interface, everything is top-notch. Trading has never been this easy and profitable!",
       author: "Sakshi Bhise",
       designation: "Financial Analyst, FutureGrow",
       image: assets.F3,
