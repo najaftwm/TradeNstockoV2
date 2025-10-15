@@ -19,7 +19,7 @@ export default function Footer() {
     }
   };
   return (
-    <div className="bg-[#EDE8D0] font-poppins py-5 px-4 md:px-8">
+    <div className="bg-gray-100 font-poppins py-5 px-4 md:px-8">
       <footer
         className="max-w-7xl mx-auto text-gray-300 rounded-2xl border border-[#1f1f1f] shadow-[0_8px_25px_rgba(0,0,0,0.6)] p-12 md:p-16 relative overflow-hidden"
         style={{
