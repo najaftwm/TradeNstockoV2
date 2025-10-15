@@ -232,8 +232,11 @@ const ContactUs = () => {
                 </svg>
               </div>
             </div>
-            <h3 className="text-lg font-bold text-black mb-2">Mail</h3>
-            <p className="text-gray-600 text-sm"></p>
+            <h3 className="text-lg font-bold text-black mb-2">Email</h3>
+            <a
+             href="mailto:support@tradenstocko.com"
+             className="text-gray-600 text-sm hover:text-[#1E4A44]">
+              support@tradenstocko.com</a>
           </div>
         </div>
       </motion.div>
