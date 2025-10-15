@@ -9,7 +9,7 @@ const ContactUs = () => {
     name: "",
     email: "",
     phone: "",
-    whatsapp: "",
+    
     state: "",
     language: "",
   });
@@ -276,8 +276,8 @@ const ContactUs = () => {
               {[
                 { name: "name", placeholder: "Full Name" },
                 { name: "email", placeholder: "Email Address", type: "email" },
-                { name: "phone", placeholder: "Phone (10 digits)" },
-                { name: "whatsapp", placeholder: "WhatsApp (10 digits)" },
+                { name: "phone", placeholder: "WhatsApp (10 digits)" },
+                
               ].map((input) => (
                 <div key={input.name}>
                   <input
