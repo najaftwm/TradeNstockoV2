@@ -70,7 +70,7 @@ export default function Footer() {
                 <li className="hover:text-white transition">NSE Trading</li>
                 <li className="hover:text-white transition">MCX Trading</li>
                 <li className="hover:text-white transition">Options Trading</li>
-                <li className="hover:text-white transition">Zero Brokerage</li>
+                <li className="hover:text-white transition">Lowest Brokerage</li>
               </ul>
             </div>
 
@@ -125,7 +125,7 @@ export default function Footer() {
                   <li className="hover:text-white transition">NSE Trading</li>
                   <li className="hover:text-white transition">MCX Trading</li>
                   <li className="hover:text-white transition">Options Trading</li>
-                  <li className="hover:text-white transition">Zero Brokerage</li>
+                  <li className="hover:text-white transition">Lowest Brokerage</li>
                 </ul>
               </div>
 
