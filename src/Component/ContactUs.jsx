@@ -206,7 +206,7 @@ const ContactUs = () => {
               </div>
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Head Office</h3>
-            <p className="text-gray-600 text-sm">vashi. Navi Mumbai</p>
+            <p className="text-gray-600 text-sm"></p>
           </div>
 
           {/* Sales & Support Section */}
@@ -219,7 +219,7 @@ const ContactUs = () => {
               </div>
             </div>
             <h3 className="text-lg font-bold text-black mb-2">Sales & Support</h3>
-            <p className="text-gray-600 text-sm">-</p>
+            <p className="text-gray-600 text-sm"></p>
           </div>
 
           {/* Mail Section */}
