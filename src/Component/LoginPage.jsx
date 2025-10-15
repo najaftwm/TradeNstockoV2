@@ -176,7 +176,7 @@ const LoginPage = () => {
   };
 
   return (
-    <div id="register" className="min-h-screen bg-[#eceae0] flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-10">
+    <div id="register" className="min-h-screen bg-[#EDE8D0] flex flex-col md:flex-row items-center justify-center px-6 py-12 gap-10">
       
       {/* LEFT SECTION */}
       <motion.div

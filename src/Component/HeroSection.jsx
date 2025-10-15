@@ -1,7 +1,8 @@
 import assets from "../assets/assets";
 import { Users, CheckCircle } from "lucide-react";
 import TraderUsersBadge from "./TraderUsersBadge";
-import { motion } from "framer-motion";
+import { motion } from "framer-motion"; // eslint-disable-line
+import { Link } from "react-router-dom";
 
 export default function HeroSection() {
   return (
@@ -92,8 +93,8 @@ export default function HeroSection() {
 
           {/* ✅ Button + Badge (Mobile only) */}
           <div className="mt-6 flex items-center space-x-3 lg:hidden">
-            <a
-              href="#"
+            <Link
+              to="/#register"
               className="group relative overflow-hidden bg-white text-black px-6 py-3 rounded-lg font-semibold inline-block"
             >
               {/* Background fill on hover */}
@@ -103,7 +104,7 @@ export default function HeroSection() {
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                 Start Now <span className="ml-2 ">→</span>
               </span>
-            </a>
+            </Link>
 
             {/* Mobile badge — smaller beside button */}
             <div className="scale-75">

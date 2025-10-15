@@ -16,7 +16,7 @@ export default function Navbar() {
         duration: 0.8,
         ease: "easeOut",
       }}
-      className="fixed top-7 z-50 bg-[#1E4A44] shadow-xl border-gray-300 rounded-xl max-w-7xl mx-auto left-0 right-0 px-6 md:px-6 
+      className="fixed top-6 z-50 bg-[#1E4A44] shadow-xl rounded-xl max-w-7xl mx-auto left-0 right-0 px-6 md:px-6 
                  md:mx-auto md:left-0 md:right-0
                  max-md:max-w-sm max-md:mx-0 max-md:left-4 max-md:right-auto"
     >

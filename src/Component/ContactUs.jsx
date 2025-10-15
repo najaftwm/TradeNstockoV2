@@ -178,18 +178,18 @@ const ContactUs = () => {
   return (
     <div className="min-h-screen bg-[#eceae0] pb-12">
       {/* Contact Image Section */}
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="w-full mb-10"
-      >
-        <img
-          src={assets.contact}
-          alt="Contact Us"
-          className="w-full h-[40vh] md:h-[60vh] object-cover shadow-2xl"
-        />
-      </motion.div>
+       <motion.div
+         initial={{ opacity: 0, y: 30 }}
+         animate={{ opacity: 1, y: 0 }}
+         transition={{ duration: 0.8, ease: "easeOut" }}
+         className="w-full mb-10 bg-[#0e0e0e]"
+       >
+         <img
+           src={assets.contact}
+           alt="Contact Us"
+           className="w-full h-[35vh] md:h-[60vh] object-contain md:object-cover shadow-2xl"
+         />
+       </motion.div>
 
       {/* Contact Information Sections */}
       <motion.div
