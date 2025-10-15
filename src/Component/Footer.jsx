@@ -1,7 +1,23 @@
 import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import assets from "../assets/assets";
 
 export default function Footer() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const handleNavigation = (path, hash) => {
+    if (location.pathname === path) {
+      // Already on the page, just scroll to the section
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    } else {
+      // Navigate to the page with hash
+      navigate(`${path}#${hash}`);
+    }
+  };
   return (
     <div className="bg-[#EDE8D0] font-poppins py-5 px-4 md:px-8">
       <footer
@@ -64,14 +80,16 @@ export default function Footer() {
                 Quick Links
               </h3>
               <ul className="space-y-2 text-[14px] text-gray-400 font-medium">
-                <li className="hover:text-white transition">
-                  <a href="#home">Home</a>
+                <li className="hover:text-white transition cursor-pointer">
+                  <span onClick={() => handleNavigation('/', 'home')}>Home</span>
                 </li>
-                <li className="hover:text-white transition">
-                  <a href="#about">About</a>
+                <li className="hover:text-white transition cursor-pointer">
+                  <span onClick={() => handleNavigation('/', 'aboutus')}>About</span>
                 </li>
                 <li className="hover:text-white transition">Careers</li>
-                <li className="hover:text-white transition">Contact</li>
+                <li className="hover:text-white transition cursor-pointer">
+                  <Link to="/contact-us">Contact</Link>
+                </li>
               </ul>
             </div>
           </div>
@@ -117,14 +135,16 @@ export default function Footer() {
                   Quick Links
                 </h3>
                 <ul className="space-y-1 text-[14px] text-gray-400 font-medium">
-                  <li className="hover:text-white transition">
-                    <a href="#home">Home</a>
+                  <li className="hover:text-white transition cursor-pointer">
+                    <span onClick={() => handleNavigation('/', 'home')}>Home</span>
                   </li>
-                  <li className="hover:text-white transition">
-                    <a href="#about">About</a>
+                  <li className="hover:text-white transition cursor-pointer">
+                    <span onClick={() => handleNavigation('/', 'aboutus')}>About</span>
                   </li>
                   <li className="hover:text-white transition">Careers</li>
-                  <li className="hover:text-white transition">Contact</li>
+                  <li className="hover:text-white transition cursor-pointer">
+                    <Link to="/contact-us">Contact</Link>
+                  </li>
                 </ul>
               </div>
             </div>
