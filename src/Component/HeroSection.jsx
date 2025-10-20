@@ -94,7 +94,7 @@ export default function HeroSection() {
           {/* ✅ Button + Badge (Mobile only) */}
           <div className="mt-6 flex items-center space-x-3 lg:hidden">
             <Link
-              to="/#register"
+              to="/install-steps"
               className="group relative overflow-hidden bg-white text-black px-6 py-3 rounded-lg font-semibold inline-block"
             >
               {/* Background fill on hover */}
