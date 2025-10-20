@@ -15,6 +15,7 @@ import A1 from './A1.png'
 import A2 from './A2.png'
 import A3 from './A3.png'
 import A4 from './A4.png'
+import A5 from './A5.png'
 
 const assets ={
     logo,
@@ -33,7 +34,8 @@ const assets ={
     A1,
     A2,
     A3,
-    A4
+    A4,
+    A5
 }
 
 export default assets;
