@@ -11,7 +11,7 @@ const steps = [
     img: assets.A1,
     command: 'Click the "Download" button to install the app',
     mobile: { arrowTop: 85, arrowLeft: 50, textTop: 105, textLeft: 50 },
-    desktop: { arrowTop: 85, arrowLeft: 50, textTop: 110, textLeft: 50 }
+    desktop: { arrowTop: 85, arrowLeft: 50, textTop: 100, textLeft: 50 }
   },
   {
     id: 2,
@@ -19,8 +19,8 @@ const steps = [
     desc: "Click the Register button to proceed to the sign-up page where you'll enter your details.",
     img: assets.A2,
     command: 'Tap the "Register" button to continue',
-    mobile: { arrowTop: 87, arrowLeft: 50, textTop: 110, textLeft: 50 },
-    desktop: { arrowTop: 87, arrowLeft: 50, textTop: 110, textLeft: 50 }
+    mobile: { arrowTop: 87, arrowLeft: 50, textTop: 108, textLeft: 50 },
+    desktop: { arrowTop: 87, arrowLeft: 50, textTop: 100, textLeft: 50 }
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ const steps = [
     img: assets.A4,
     command: 'Fill the form and tap "Submit", then press "Go Back to Login Page',
     mobile: { arrowTop: 90, arrowLeft: 50, textTop: 110, textLeft: 50 },
-    desktop: { arrowTop: 90, arrowLeft: 50, textTop: 115, textLeft: 50 }
+    desktop: { arrowTop: 90, arrowLeft: 50, textTop: 105, textLeft: 50 }
   },
   {
     id: 5,
@@ -47,7 +47,7 @@ const steps = [
     img: assets.A5,
     command: 'Enter credentials and tap "Login"',
     mobile: { arrowTop: 70, arrowLeft: 50, textTop: 80, textLeft: 50 },
-    desktop: { arrowTop: 85, arrowLeft: 50, textTop: 110, textLeft: 50 }
+    desktop: { arrowTop: 70, arrowLeft: 50, textTop: 80, textLeft: 50 }
   },
 ];
 

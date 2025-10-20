@@ -1,7 +1,7 @@
 import assets from "../assets/assets";
 import { Users, CheckCircle } from "lucide-react";
 import TraderUsersBadge from "./TraderUsersBadge";
-import { motion } from "framer-motion"; // eslint-disable-line
+import { motion } from "framer-motion";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function HeroSection() {
@@ -92,7 +92,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* ✅ Button + Badge (Mobile only) */}
+          {/* ✅ Mobile Button + Badge */}
           <div className="mt-6 flex items-center space-x-3 lg:hidden">
             <button
               type="button"
@@ -103,20 +103,37 @@ export default function HeroSection() {
               }}
               className="group relative overflow-hidden bg-white text-black px-6 py-3 rounded-lg font-semibold inline-block"
             >
-              {/* Background fill on hover */}
               <span className="absolute bottom-0 left-0 w-full h-full bg-[#D67F3C] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
-
-              {/* Text */}
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                 Start Now <span className="ml-2 ">→</span>
               </span>
             </button>
 
-            {/* Mobile badge — smaller beside button */}
             <div className="scale-75">
               <TraderUsersBadge small />
             </div>
           </div>
+
+          {/* ✅ Desktop Button */}
+          <div className="mt-8 hidden lg:flex items-center space-x-4">
+            <button
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                navigate("/install-steps");
+              }}
+              className="group relative overflow-hidden bg-[#1E4A44] text-white px-8 py-3 rounded-lg font-semibold inline-block shadow-md hover:shadow-lg transition-all"
+            >
+              <span className="absolute bottom-0 left-0 w-full h-full bg-[#D67F3C] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
+              <span className="relative z-10 group-hover:text-white transition-colors duration-300">
+                Start Now <span className="ml-2">→</span>
+              </span>
+            </button>
+
+            {/* <TraderUsersBadge /> */}
+          </div>
+
         </motion.div>
 
         {/* 🟢 Trader Badge Animation */}
@@ -141,6 +158,7 @@ export default function HeroSection() {
             style={{ maxWidth: "550px" }}
           />
         </div>
+
       </div>
     </section>
   );
