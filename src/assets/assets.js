@@ -10,6 +10,7 @@ import T1 from './T1.jpeg'
 import T2 from './T2.jpg'
 import QR from './QR.jpeg'
 import contact from './contact.jpg'
+import worldMap from './worldMap.png'
 const assets ={
     logo,
     heroBg,
@@ -22,7 +23,8 @@ const assets ={
     T1,
     T2,
     QR,
-    contact
+    contact,
+    worldMap
 }
 
 export default assets;

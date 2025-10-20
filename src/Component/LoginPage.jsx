@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
 import { motion } from "framer-motion"; // eslint-disable-line
-import assets from "../assets/assets";
-
+ 
 const LoginPage = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -186,46 +185,7 @@ const LoginPage = () => {
         viewport={{ once: true, amount: 0.3 }}
         className="md:w-1/2 flex flex-col items-center justify-center text-center space-y-6"
       >
-        <h1 className="text-4xl md:text-5xl font-extrabold text-[#4a4a2e] leading-tight mb-4">
-          Discover the Future of <span className="text-blue-700">Trading</span>
-        </h1>
-
-        {/* ✅ QR + Button Wrapper */}
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{
-            duration: 1,
-            delay: 0.3,
-            ease: [0.22, 1, 0.36, 1],
-          }}
-          viewport={{ once: true }}
-          className="flex flex-col items-center justify-center"
-        >
-          <a
-            href="/app-tradenstocko.apk"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src={assets.QR}
-              alt="QR Code"
-              className="w-56 h-56 md:w-72 md:h-72 object-contain rounded-lg shadow-lg 
-                        hover:scale-105 transition-transform duration-300 border border-gray-300 bg-white"
-            />
-          </a>
-          <a
-            href="/app-tradenstocko.apk"
-            download
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-5 inline-block bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg shadow-md 
-                      hover:bg-blue-800 transition duration-300"
-          >
-            Download App
-          </a>
-        </motion.div>
+        {/* Add your left section content here */}
       </motion.div>
 
       {/* RIGHT SECTION */}
