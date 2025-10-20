@@ -198,45 +198,61 @@ const ContactUs = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* Office Section */}
           <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 ease-in-out">
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-[#1E4A44] rounded-full flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clipRule="evenodd" />
                 </svg>
               </div>
+              <h3 className="text-lg font-bold text-black">Head Office</h3>
             </div>
-            <h3 className="text-lg font-bold text-black mb-2">Head Office</h3>
-            <p className="text-gray-600 text-sm"></p>
+            <div className="text-gray-600 text-sm space-y-2">
+              <p className="mb-2">18-19 Queen Street, Aldermary House</p>
+              <p className="mb-2">London, England, EC4N1TX</p>
+              <div className="border-t border-gray-200 my-3"></div>
+              <p className="mb-2">IFZA Business Park - Building A2</p>
+              <p className="mb-2">Dubai Silicon Oasis</p>
+              <p>Dubai - United Arab Emirates</p>
+            </div>
           </div>
 
           {/* Sales & Support Section */}
+          <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:scale-105 transition-transform duration-300 ease-in-out relative">
+            <img
+              src={assets.worldMap}
+              alt="World Map"
+              className="w-full h-full object-cover rounded-xl scale-150 translate-x-8"
+            />
+             <div className="absolute top-4 left-1/2 transform -translate-x-1/2 p-3 flex items-center gap-2">
+               <div className="w-8 h-8 bg-[#1E4A44] rounded-full flex items-center justify-center">
+                 <svg className="w-4 h-4 text-white" fill="currentColor" viewBox="0 0 24 24">
+                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+                 </svg>
+               </div>
+               <h3 className="text-md font-bold text-black drop-shadow-lg w-full">Sales & Support</h3>
+             </div>
+          </div>
+
+          {/* Mail Section */}
           <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 ease-in-out">
-            <div className="flex justify-center mb-4">
+            <div className="flex justify-center items-center gap-3 mb-4">
               <div className="w-12 h-12 bg-[#1E4A44] rounded-full flex items-center justify-center">
                 <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
               </div>
+              <h3 className="text-lg font-bold text-black">Contact Details</h3>
             </div>
-            <h3 className="text-lg font-bold text-black mb-2">Sales & Support</h3>
-            <p className="text-gray-600 text-sm"></p>
-          </div>
-
-          {/* Mail Section */}
-          <div className="bg-white rounded-xl shadow-lg p-6 text-center hover:scale-105 transition-transform duration-300 ease-in-out">
-            <div className="flex justify-center mb-4">
-              <div className="w-12 h-12 bg-[#1E4A44] rounded-full flex items-center justify-center">
-                <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 20 20">
-                  <path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" />
-                  <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
-                </svg>
-              </div>
+            <div className="text-gray-600 text-sm space-y-4">
+              <a
+               href="mailto:support@tradenstocko.com"
+               className="block hover:text-[#1E4A44]">
+               Email: support@tradenstocko.com</a>
+              <a
+               href="tel:+44700183018"
+               className="block hover:text-[#1E4A44]">
+              Contact No.: +44 700 183 018</a>
             </div>
-            <h3 className="text-lg font-bold text-black mb-2">Email</h3>
-            <a
-             href="mailto:support@tradenstocko.com"
-             className="text-gray-600 text-sm hover:text-[#1E4A44]">
-              support@tradenstocko.com</a>
           </div>
         </div>
       </motion.div>
