@@ -11,6 +11,10 @@ import T2 from './T2.jpg'
 import QR from './QR.jpeg'
 import contact from './contact.jpg'
 import worldMap from './worldMap.png'
+import A1 from './A1.png'
+import A2 from './A2.png'
+import A3 from './A3.png'
+import A4 from './A4.png'
 
 const assets ={
     logo,
@@ -25,7 +29,11 @@ const assets ={
     T2,
     QR,
     contact,
-    worldMap
+    worldMap,
+    A1,
+    A2,
+    A3,
+    A4
 }
 
 export default assets;
