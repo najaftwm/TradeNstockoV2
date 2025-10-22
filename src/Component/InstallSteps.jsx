@@ -7,7 +7,7 @@ const steps = [
   {
     id: 1,
     title: "Scan & Download the App",
-    desc: "Use the QR code or click the Download button below to get the Royalty App on your device.",
+    desc: "Use the QR code or click the Download button below to get the TNS App on your device.",
     img: assets.A1,
     command: 'Click the "Download" button to install the app',
     mobile: { arrowTop: 85, arrowLeft: 50, textTop: 105, textLeft: 50 },
@@ -36,14 +36,14 @@ const steps = [
     title: "Complete Your Registration",
     desc: "Fill in all your details carefully and press the Submit button. Once done, tap 'Go Back to Login Page' to return to the login screen.",
     img: assets.A4,
-    command: 'Fill the form and tap "Submit", then press "Go Back to Login Page',
+    command: 'Fill the form and tap "Submit", then press "Go Back to Login"',
     mobile: { arrowTop: 90, arrowLeft: 50, textTop: 110, textLeft: 50 },
     desktop: { arrowTop: 90, arrowLeft: 50, textTop: 105, textLeft: 50 }
   },
   {
     id: 5,
     title: "Login to Your Account",
-    desc: "Enter your registered mobile number and password, then tap the Login button to access your account.",
+    desc: "Enter your registered username and password, then tap the Login button to access your account.",
     img: assets.A5,
     command: 'Enter credentials and tap "Login"',
     mobile: { arrowTop: 70, arrowLeft: 50, textTop: 80, textLeft: 50 },
