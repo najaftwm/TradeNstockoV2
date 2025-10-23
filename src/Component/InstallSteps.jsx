@@ -119,8 +119,21 @@ const InstallSteps = () => {
   }, []);
 
   return (
-    <section className="bg-[#022B3A] py-20 px-6 md:px-16 md:pt-32 text-white">
-      <h2 className="text-4xl font-bold text-center mb-16">How to Install the App</h2>
+     <section className="bg-[#022B3A] py-20 px-6 md:px-16 md:pt-32 text-white">
+      <h2 className="text-4xl font-bold text-center mb-14">How to Install the App</h2>
+      
+      {/* How TradeStocko Works - Attractive Header */}
+      <div className="text-center mb-20 max-w-3xl mx-auto">
+        <div className="inline-block mb-4">
+          <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 via-blue-500 to-cyan-400 bg-clip-text text-transparent">
+            How TradeStocko Works
+          </h3>
+        </div>
+        <p className="text-gray-300 text-xl md:text-2xl font-light tracking-wide">
+          Get started in just a few easy steps — <span className="text-blue-400 font-medium">no hassle, no delay.</span>
+        </p>
+        <div className="mt-6 w-24 h-1 bg-gradient-to-r from-transparent via-blue-500 to-transparent mx-auto rounded-full"></div>
+      </div>
 
       <div className="relative flex flex-col items-start max-w-4xl mx-auto">
         {/* Progress Line */}
