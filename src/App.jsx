@@ -11,6 +11,12 @@ import InstallSteps from './Component/InstallSteps';
 // ✅ Import AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import Disclaimer from './FooterComponents/Disclaimer';
+import PrivacyPolicy from './FooterComponents/PrivacyPolicy';
+import TermsAndConditions from './FooterComponents/TermsAndConditions';
+import NSE from './FooterComponents/NSE';
+import Options from './FooterComponents/Options';
+import MCX from './FooterComponents/MCX';
 
 // Scroll to section logic
 const ScrollToSection = () => {
@@ -37,12 +43,24 @@ const AppContent = () => {
   const location = useLocation();
   const isContactPage = location.pathname === '/contact-us';
 
-  // ✅ Initialize AOS here (runs once on mount)
+  // Pages where Navbar & FloatingAppLinks should NOT appear
+  const hiddenLayoutRoutes = [
+    "/disclaimer",
+    "/privacy-policy",
+    "/terms",
+    "/nse",
+    "/options",
+    "/mcx"
+  ];
+
+  const isFooterPage = hiddenLayoutRoutes.includes(location.pathname);
+
+  // Initialize AOS
   useEffect(() => {
     AOS.init({
-      duration: 1000, // animation speed (ms)
-      offset: 120,    // how far from viewport to trigger
-      once: true,     // animate only once
+      duration: 1000,
+      offset: 120,
+      once: true,
       easing: "ease-in-out",
     });
   }, []);
@@ -66,15 +84,27 @@ const AppContent = () => {
   return (
     <>
       <ScrollToSection />
-      <Navbar />
-      {!isContactPage && <FloatingAppLinks hideOnHeroMobile={isHeroInView} />}
+
+      {/* ✅ Only render Navbar if NOT a footer page */}
+      {!isFooterPage && <Navbar />}
+
+      {/* ✅ Floating links: hide on hero for normal pages */}
+      {!isFooterPage && !isContactPage && (
+        <FloatingAppLinks hideOnHeroMobile={isHeroInView} />
+      )}
+
       <GoToTopButton />
 
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/contact-us' element={<ContactUs />} />
-        {/* ✅ You can also render InstallSteps directly as a route or inside Home */}
         <Route path='/install-steps' element={<InstallSteps />} />
+        <Route path='/disclaimer' element={<Disclaimer />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
+        <Route path='/terms' element={<TermsAndConditions />} />
+        <Route path='/nse' element={<NSE />} />
+        <Route path='/options' element={<Options />} />
+        <Route path='/mcx' element={<MCX />} />
       </Routes>
 
       <Footer />
