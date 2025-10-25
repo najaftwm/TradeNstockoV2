@@ -66,7 +66,7 @@ export default function TradingGuidelines() {
             <ul className="space-y-3">
               <li className="text-gray-800 text-lg font-medium">• Minimum fund addition: ₹1,000 or more.</li>
               <li className="text-gray-800 text-lg font-medium">• Trial transfers such as ₹1, ₹5, or ₹100 are not accepted.</li>
-              <li className="text-gray-800 text-lg font-medium">• Pay-in approval may take 3–5 minutes.</li>
+              <li className="text-gray-800 text-lg font-medium">• Pay-in approval may take 3–4 minutes or more depending on the working days.</li>
               <li className="text-gray-800 text-lg font-medium">• Always verify the current pay-in details before initiating any transfer.</li>
               <li className="text-gray-800 text-lg font-medium">• Bank/UPI details may change without prior notice—check each time before depositing.</li>
               <li className="text-gray-800 text-lg font-medium">• Mistakes during fund transfers (incorrect UPI/Bank entry) are solely the trader's responsibility.</li>
