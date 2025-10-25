@@ -11,9 +11,9 @@ export default function NSE() {
       {/* Content Section */}
       <div className="w-full text-black px-8 py-12 space-y-6 text-lg leading-relaxed">
         {/* Introduction */}
-        <p className="font-bold text-xl">
+        {/* <p className="font-bold text-xl">
           At TradeNStocko, these NSE Trading Rules govern your trading activities on the National Stock Exchange. Please read and understand these rules before engaging in any trading activities.
-        </p>
+        </p> */}
 
         {/* Trading Rules */}
         <div>

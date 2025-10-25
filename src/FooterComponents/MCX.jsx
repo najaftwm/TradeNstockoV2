@@ -11,9 +11,9 @@ export default function MCX() {
       {/* Content Section */}
       <div className="w-full text-black px-8 py-12 space-y-6 text-lg leading-relaxed">
         {/* Introduction */}
-        <p className="font-bold text-xl">
+        {/* <p className="font-bold text-xl">
           At TradeNStocko, these MCX Trading Guidelines govern your Multi Commodity Exchange trading activities. Please read and understand these guidelines before engaging in any MCX trading activities.
-        </p>
+        </p> */}
 
         {/* Trading Guidelines */}
         <div>
@@ -34,3 +34,4 @@ export default function MCX() {
     </div>
   );
 }
+

@@ -11,9 +11,9 @@ export default function TermsAndConditions() {
       {/* Content Section */}
       <div className="w-full text-black px-8 py-12 space-y-6 text-lg leading-relaxed ">
         {/* Introduction */}
-        <p className="font-bold text-xl">
+        {/* <p className="font-bold text-xl">
           At TradeNStocko, these Terms & Conditions govern your use of our trading platform and services. By using our platform, you agree to comply with all terms outlined below.
-        </p>
+        </p> */}
 
         {/* 1. Trading Hours */}
         <div>
@@ -97,18 +97,23 @@ export default function TermsAndConditions() {
           </ul>
         </div>
 
-        {/* 9. Additional Rules */}
+        {/* 10. Disclaimer */}
         <div>
-          <p className="font-bold text-2xl mb-3">9. Additional Rules</p>
+          <p className="font-bold text-2xl mb-3">10. Disclaimer</p>
           <ul className="list-disc pl-6 space-y-2">
-            <li className="font-bold text-lg">Profits from fake volume or manipulative trades will be forfeited; losses will be charged to the trader.</li>
-            <li className="font-bold text-lg">Orders execute only at exchange bid/ask prices; highs, lows, and LTP will not be used for execution.</li>
-            <li className="font-bold text-lg">Multiple accounts from the same IP are prohibited; profits from such accounts will be removed.</li>
-            <li className="font-bold text-lg">Stop-loss orders trigger at market price; remaining orders are cancelled after close.</li>
-            <li className="font-bold text-lg">Dividend and bonus adjustments follow official exchange circulars.</li>
-            <li className="font-bold text-lg">Trades placed at incorrect prices due to technical errors may be removed without notice.</li>
-            <li className="font-bold text-lg">Arbitrage between MCX and NSE is not allowed; related profits will be deleted.</li>
+            <li className="font-bold text-lg">TradeNStocko reserves the right to modify these terms at any time. Continued use of our services implies acceptance.</li>
+            <li className="font-bold text-lg">Trading carries risk. You may lose your invested capital. Trade responsibly.</li>
           </ul>
+        </div>
+
+        {/* 11. Support */}
+        <div>
+          <p className="font-bold text-2xl mb-3">11. Support</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li className="font-bold text-lg">Email: support@tns.com</li>
+            <li className="font-bold text-lg">Phone:</li>
+          </ul>
+          <p className="font-bold text-lg mt-3">By using TradeNStocko, you acknowledge that you have read, understood, and accepted these Terms and Conditions.</p>
         </div>
       </div>
     </div>

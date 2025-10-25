@@ -11,9 +11,9 @@ export default function Options() {
       {/* Content Section */}
       <div className="w-full text-black px-8 py-12 space-y-6 text-lg leading-relaxed">
         {/* Introduction */}
-        <p className="font-bold text-xl">
+        {/* <p className="font-bold text-xl">
           At TradeNStocko, these Options Trading Guidelines govern your options trading activities. Please read and understand these guidelines before engaging in any options trading activities.
-        </p>
+        </p> */}
 
         {/* Trading Guidelines */}
         <div>
@@ -30,3 +30,4 @@ export default function Options() {
     </div>
   );
 }
+

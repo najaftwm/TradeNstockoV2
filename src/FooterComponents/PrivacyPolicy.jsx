@@ -96,6 +96,32 @@ export default function PrivacyPolicy() {
           <p className="font-bold text-2xl mb-3">10. Advertising Partners' Privacy Policies</p>
           <p className="font-bold text-lg">Third-party advertisers on our site may use cookies, JavaScript, or Web Beacons to personalize content and measure ad effectiveness. We do not control their cookies; please review their privacy policies directly.</p>
         </div>
+
+        {/* 11. GDPR Data Protection Rights */}
+        <div>
+          <p className="font-bold text-2xl mb-3">11. GDPR Data Protection Rights</p>
+          <p className="font-bold text-lg mb-3">You have rights including:</p>
+          <ul className="list-disc pl-6 space-y-2">
+            <li className="font-bold text-lg">Accessing your data</li>
+            <li className="font-bold text-lg">Rectifying inaccurate or incomplete data</li>
+            <li className="font-bold text-lg">Requesting deletion of your data</li>
+            <li className="font-bold text-lg">Restricting or objecting to data processing</li>
+            <li className="font-bold text-lg">Data portability requests</li>
+          </ul>
+          <p className="font-bold text-lg mt-3">We will respond to requests within one month.</p>
+        </div>
+
+        {/* 12. Children's Information */}
+        <div>
+          <p className="font-bold text-2xl mb-3">12. Children's Information</p>
+          <p className="font-bold text-lg">We do not knowingly collect data from children under 13. If you believe we have such data, please contact us for removal.</p>
+        </div>
+
+        {/* 13. Updates to This Policy */}
+        <div>
+          <p className="font-bold text-2xl mb-3">13. Updates to This Policy</p>
+          <p className="font-bold text-lg">We may revise this policy periodically. Changes will be posted here and take effect immediately.</p>
+        </div>
       </div>
     </div>
   );
