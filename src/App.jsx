@@ -7,16 +7,13 @@ import FloatingAppLinks from './Component/FloatingAppLinks';
 import GoToTopButton from './Component/GoToTopButton';
 import ContactUs from './Component/ContactUs';
 import InstallSteps from './Component/InstallSteps';
+import TradingGuidelines from './Component/TradingGuidelines';
+import PrivacyPolicyPage from './Component/PrivacyPolicyPage';
+import TermsAndConditionsPage from './Component/TermsAndConditionsPage';
 
 // ✅ Import AOS
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import Disclaimer from './FooterComponents/Disclaimer';
-import PrivacyPolicy from './FooterComponents/PrivacyPolicy';
-import TermsAndConditions from './FooterComponents/TermsAndConditions';
-import NSE from './FooterComponents/NSE';
-import Options from './FooterComponents/Options';
-import MCX from './FooterComponents/MCX';
 
 // Scroll to section logic
 const ScrollToSection = () => {
@@ -45,12 +42,10 @@ const AppContent = () => {
 
   // Pages where Navbar & FloatingAppLinks should NOT appear
   const hiddenLayoutRoutes = [
-    "/disclaimer",
+    "/contact-us",
+    "/trading-guidelines",
     "/privacy-policy",
-    "/terms",
-    "/nse",
-    "/options",
-    "/mcx"
+    "/terms"
   ];
 
   const isFooterPage = hiddenLayoutRoutes.includes(location.pathname);
@@ -99,12 +94,9 @@ const AppContent = () => {
         <Route path='/' element={<Home />} />
         <Route path='/contact-us' element={<ContactUs />} />
         <Route path='/install-steps' element={<InstallSteps />} />
-        <Route path='/disclaimer' element={<Disclaimer />} />
-        <Route path='/privacy-policy' element={<PrivacyPolicy />} />
-        <Route path='/terms' element={<TermsAndConditions />} />
-        <Route path='/nse' element={<NSE />} />
-        <Route path='/options' element={<Options />} />
-        <Route path='/mcx' element={<MCX />} />
+        <Route path='/trading-guidelines' element={<TradingGuidelines />} />
+        <Route path='/privacy-policy' element={<PrivacyPolicyPage />} />
+        <Route path='/terms' element={<TermsAndConditionsPage />} />
       </Routes>
 
       <Footer />

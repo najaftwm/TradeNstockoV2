@@ -68,17 +68,19 @@ export default function Footer() {
               </h3>
               <ul className="space-y-2 text-[14px] text-gray-400 font-medium">
                 <li className="hover:text-white transition cursor-pointer">
-                  <Link to="/nse">NSE Trading</Link>
+                  <Link to="/trading-guidelines">NSE Trading</Link>
                 </li>
                 <li className="hover:text-white transition cursor-pointer">
-                  <Link to="/options">Options Trading</Link>
+                  <Link to="/trading-guidelines#options-trading">Options Trading</Link>
                 </li>
                 <li className="hover:text-white transition cursor-pointer">
-                  <Link to="/mcx">MCX Trading</Link>
+                  <Link to="/trading-guidelines#mcx-trading">MCX Trading</Link>
                 </li>
-                <li className="hover:text-white transition">Lowest Brokerage</li>
                 <li className="hover:text-white transition cursor-pointer">
-                  <Link to="/terms">Trading Terms</Link>
+                  <Link to="/trading-guidelines">Lowest Brokerage</Link>
+                </li>
+                <li className="hover:text-white transition cursor-pointer">
+                  <Link to="/trading-guidelines">Trading Terms</Link>
                 </li>
               </ul>
             </div>
@@ -132,17 +134,19 @@ export default function Footer() {
                 </h3>
                 <ul className="space-y-1 text-[14px] text-gray-400 font-medium">
                   <li className="hover:text-white transition cursor-pointer">
-                    <Link to="/nse">NSE Trading</Link>
+                    <Link to="/trading-guidelines">NSE Trading</Link>
                   </li>
                   <li className="hover:text-white transition cursor-pointer">
-                    <Link to="/options">Options Trading</Link>
+                    <Link to="/trading-guidelines#options-trading">Options Trading</Link>
                   </li>
                   <li className="hover:text-white transition cursor-pointer">
-                    <Link to="/mcx">MCX Trading</Link>
+                    <Link to="/trading-guidelines#mcx-trading">MCX Trading</Link>
                   </li>
-                  <li className="hover:text-white transition">Lowest Brokerage</li>
                   <li className="hover:text-white transition cursor-pointer">
-                    <Link to="/terms">Trading Terms</Link>
+                    <Link to="/trading-guidelines">Lowest Brokerage</Link>
+                  </li>
+                  <li className="hover:text-white transition cursor-pointer">
+                    <Link to="/trading-guidelines">Trading Terms</Link>
                   </li>
                 </ul>
               </div>
