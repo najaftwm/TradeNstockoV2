@@ -10,6 +10,7 @@ import InstallSteps from './Component/InstallSteps';
 import TradingGuidelines from './Component/TradingGuidelines';
 import PrivacyPolicyPage from './Component/PrivacyPolicyPage';
 import TermsAndConditionsPage from './Component/TermsAndConditionsPage';
+import DisclaimerPage from './Component/DisclaimerPage';
 
 // ✅ Import AOS
 import AOS from 'aos';
@@ -45,7 +46,8 @@ const AppContent = () => {
     "/contact-us",
     "/trading-guidelines",
     "/privacy-policy",
-    "/terms"
+    "/terms",
+    "/disclaimer"
   ];
 
   const isFooterPage = hiddenLayoutRoutes.includes(location.pathname);
@@ -97,6 +99,7 @@ const AppContent = () => {
         <Route path='/trading-guidelines' element={<TradingGuidelines />} />
         <Route path='/privacy-policy' element={<PrivacyPolicyPage />} />
         <Route path='/terms' element={<TermsAndConditionsPage />} />
+        <Route path='/disclaimer' element={<DisclaimerPage />} />
       </Routes>
 
       <Footer />
