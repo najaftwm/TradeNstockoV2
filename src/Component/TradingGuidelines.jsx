@@ -2,7 +2,7 @@ export default function TradingGuidelines() {
   return (
     <div className="min-h-screen bg-gray-100">
       {/* Gradient Banner Heading */}
-      <div className="w-full bg-gradient-to-r from-[#1E4A44] to-[#2a6b63] py-26 px-8">
+      <div className="w-full bg-gradient-to-r from-[#0B6177] to-[#094F64] py-26 px-8">
         <div className="max-w-6xl mx-auto">
           <h1 className="text-5xl md:text-6xl font-bold text-white">Trading & Funding Guidelines</h1>
         </div>

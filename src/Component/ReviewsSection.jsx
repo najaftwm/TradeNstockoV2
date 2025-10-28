@@ -152,7 +152,7 @@ const ReviewsSection = () => {
             onClick={() => setActiveTab("all")}
             className={`px-5 py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
               activeTab === "all"
-                ? "bg-[#1E4A44] text-white shadow-md"
+                ? "bg-[#094F64] text-white shadow-md"
                 : "text-gray-600 hover:bg-gray-200"
             }`}
           >
@@ -162,7 +162,7 @@ const ReviewsSection = () => {
             onClick={() => setActiveTab("traders")}
             className={`px-5 py-2 rounded-full font-medium text-sm sm:text-base transition-all duration-300 ${
               activeTab === "traders"
-                ? "bg-[#1E4A44] text-white shadow-md"
+                ? "bg-[#094F64] text-white shadow-md"
                 : "text-gray-600 hover:bg-gray-200"
             }`}
           >

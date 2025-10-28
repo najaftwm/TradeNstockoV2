@@ -16,6 +16,8 @@ import A2 from './A2.png'
 import A3 from './A3.png'
 import A4 from './A4.png'
 import A5 from './A5.png'
+import newlogonobg from './newlogonobg.png'
+import diffcolorlogo from './diffcolorlogo.png'
 
 const assets ={
     logo,
@@ -35,7 +37,9 @@ const assets ={
     A2,
     A3,
     A4,
-    A5
+    A5,
+    newlogonobg,
+    diffcolorlogo
 }
 
 export default assets;

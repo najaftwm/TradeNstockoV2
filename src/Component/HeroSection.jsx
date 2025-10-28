@@ -13,10 +13,10 @@ export default function HeroSection() {
     >
       {/* Background Logo with Blur */}
       <div
-        className="absolute inset-0 bg-center bg-no-repeat bg-contain blur-lg opacity-40"
+        className="absolute inset-0 bg-center bg-no-repeat bg-contain blur-sm opacity-30"
         style={{
-          backgroundImage: `url(${assets.logo})`,
-          backgroundPosition: "center 40%",
+          backgroundImage: `url(${assets.newlogonobg})`,
+          backgroundPosition: "40% 40%", // move image a bit to the right
         }}
       ></div>
 
@@ -35,7 +35,7 @@ export default function HeroSection() {
         >
           {/* Badge + Sub-badge */}
           <div className="space-y-1">
-            <h4 className="text-yellow-600 font-bold text-2xl uppercase tracking-wider">
+            <h4 className="text-[#0780f7] font-bold text-2xl uppercase tracking-wider">
               BEST TRADING APP
             </h4>
             <p className="text-gray-800 text-lg font-semibold">NSE | MCX | OPT</p>
@@ -46,13 +46,13 @@ export default function HeroSection() {
             <h1 className="text-4xl md:text-5xl font-bold text-black leading-tight">
               Enjoy Maximum Profits with
             </h1>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-yellow-600 leading-tight">
+            <h2 className="text-4xl md:text-5xl font-extrabold text-[#289b48] leading-tight">
               Lowest BROKERAGE
             </h2>
           </div>
 
           {/* Subheading */}
-          <p className="text-yellow-700 font-bold text-xl">
+          <p className="text-[#0780f7] font-bold text-xl">
             Get Free Account for TNS Trading App!
           </p>
 
@@ -71,23 +71,23 @@ export default function HeroSection() {
           <div className="flex flex-row flex-wrap sm:flex-nowrap items-center space-x-0 sm:space-x-6 mt-6 gap-4">
             {/* Registered Users */}
             <div className="flex items-center space-x-2 flex-1 sm:flex-none">
-              <span className="bg-[#1E4A44] text-white rounded-full p-2">
+              <span className="bg-[#0B6177] text-white rounded-full p-2">
                 <Users size={20} />
               </span>
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#1E4A44]">500K</h3>
-                <p className="text-sm sm:text-base text-gray-600">Registered Users</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#0B6177]">500K</h3>
+                <p className="text-sm sm:text-base text-[#0B6177]">Registered Users</p>
               </div>
             </div>
 
             {/* Customer Satisfaction */}
             <div className="flex items-center space-x-2 flex-1 sm:flex-none">
-              <span className="bg-[#1E4A44] text-white rounded-full p-2">
+              <span className="bg-[#0B6177] text-white rounded-full p-2">
                 <CheckCircle size={20} />
               </span>
               <div>
-                <h3 className="text-xl sm:text-2xl font-bold text-[#1E4A44]">99%</h3>
-                <p className="text-sm sm:text-base text-gray-600">Customer Satisfaction</p>
+                <h3 className="text-xl sm:text-2xl font-bold text-[#0B6177]">99%</h3>
+                <p className="text-sm sm:text-base text-[#0B6177]">Customer Satisfaction</p>
               </div>
             </div>
           </div>
@@ -101,9 +101,9 @@ export default function HeroSection() {
                 e.stopPropagation();
                 navigate("/install-steps");
               }}
-              className="group relative overflow-hidden bg-white text-black px-6 py-3 rounded-lg font-semibold inline-block"
+              className="group relative overflow-hidden bg-[#0B6177] text-white px-6 py-3 rounded-lg font-semibold inline-block"
             >
-              <span className="absolute bottom-0 left-0 w-full h-full bg-[#D67F3C] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
+              <span className="absolute bottom-0 left-0 w-full h-full bg-[#094F64] text-white transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                 Start Now <span className="ml-2 ">→</span>
               </span>
@@ -123,9 +123,9 @@ export default function HeroSection() {
                 e.stopPropagation();
                 navigate("/install-steps");
               }}
-              className="group relative overflow-hidden bg-[#1E4A44] text-white px-8 py-3 rounded-lg font-semibold inline-block shadow-md hover:shadow-lg transition-all"
+              className="group relative overflow-hidden bg-[#0B6177] text-white px-8 py-3 rounded-lg font-semibold inline-block shadow-md hover:shadow-lg transition-all"
             >
-              <span className="absolute bottom-0 left-0 w-full h-full bg-[#D67F3C] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
+              <span className="absolute bottom-0 left-0 w-full h-full bg-[#094F64] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
               <span className="relative z-10 group-hover:text-white transition-colors duration-300">
                 Start Now <span className="ml-2">→</span>
               </span>

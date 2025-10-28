@@ -23,7 +23,7 @@ export default function Footer() {
       <footer
         className="max-w-7xl mx-auto text-gray-300 rounded-2xl border border-[#1f1f1f] shadow-[0_8px_25px_rgba(0,0,0,0.6)] p-12 md:p-16 relative overflow-hidden"
         style={{
-          backgroundImage: `url(${assets.logo})`,
+          backgroundImage: `url(${assets.newlogonobg})`,
           backgroundSize: "50%",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

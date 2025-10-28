@@ -16,17 +16,17 @@ export default function Navbar() {
         duration: 0.8,
         ease: "easeOut",
       }}
-      className="fixed top-6 z-[100] bg-[#1E4A44] shadow-xl rounded-xl max-w-7xl mx-auto left-0 right-0 px-6 md:px-6 
+      className="fixed top-6 z-[100] bg-white shadow-lg rounded-xl max-w-7xl mx-auto left-0 right-0 px-6 md:px-6 
                  md:mx-auto md:left-0 md:right-0
                  max-md:max-w-sm max-md:mx-0 max-md:left-4 max-md:right-auto"
     >
-      <div className="flex items-center justify-between py-4 md:py-4 max-md:py-2">
+      <div className="flex items-center justify-between py-3 md:py-3 max-md:py-1.5">
         {/* === Logo === */}
-        <Link to="/" className="flex items-center ml-1 h-12 bg-[#F8F1E9] p-2 rounded-lg group md:h-12 md:p-2 max-md:h-9 max-md:p-1.5">
+        <Link to="/" className="flex items-center ml-1 h-12 group md:h-12 max-md:h-9">
           <img
-            src={assets.logo}
+            src={assets.newlogonobg}
             alt="Logo"
-            className="h-16 w-auto transform transition-transform duration-500 ease-in-out group-hover:scale-125 md:h-16 max-md:h-10"
+            className="h-20 w-auto transform transition-transform duration-500 ease-in-out group-hover:scale-110 md:h-23 max-md:h-12"
           />
         </Link>
 
@@ -36,7 +36,7 @@ export default function Navbar() {
             <Link
               key={index}
               to={`/#${item.toLowerCase().replace(/\s/g, "")}`}
-              className="relative text-lg text-[#F8F1E9] hover:text-[#D67F3C] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#D67F3C] after:transition-all after:duration-300 hover:after:w-full"
+              className="relative text-lg text-[#1E4A44] hover:text-[#0780f7] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#0780f7] after:transition-all after:duration-300 hover:after:w-full"
             >
               {item}
             </Link>
@@ -45,7 +45,7 @@ export default function Navbar() {
           {/* Contact Us Link */}
           <Link
             to="/contact-us"
-            className="relative text-lg text-[#F8F1E9] hover:text-[#D67F3C] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#D67F3C] after:transition-all after:duration-300 hover:after:w-full"
+            className="relative text-lg text-[#1E4A44] hover:text-[#0780f7] after:content-[''] after:absolute after:left-0 after:bottom-0 after:w-0 after:h-[2px] after:bg-[#0780f7] after:transition-all after:duration-300 hover:after:w-full"
           >
             Contact Us
           </Link>
@@ -55,7 +55,7 @@ export default function Navbar() {
             to="/#register"
             className="group relative overflow-hidden bg-[#F8F1E9] text-[#1E4A44] px-5 py-2 rounded-xl font-semibold"
           >
-            <span className="absolute bottom-0 left-0 w-full h-full bg-[#D67F3C] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
+            <span className="absolute bottom-0 left-0 w-full h-full bg-[#0780f7] transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 ease-out z-0"></span>
             <span className="relative z-10 group-hover:text-white transition-colors duration-300">
               Register
             </span>
@@ -65,9 +65,9 @@ export default function Navbar() {
         {/* === Mobile Menu Toggle === */}
         <button
           onClick={toggleMenu}
-          className="md:hidden text-[#F8F1E9] focus:outline-none p-2 bg-[#2A4D44] rounded-full relative z-[60] max-md:p-1.5 max-md:ml-2"
+          className="md:hidden text-[#1E4A44] focus:outline-none p-2 bg-gray-100 rounded-full relative z-[60] max-md:p-1.5 max-md:ml-2"
         >
-          {isOpen ? <XCircle size={24} color="#F8F1E9" className="md:hidden" /> : <Menu size={24} color="#F8F1E9" className="md:hidden" />}
+          {isOpen ? <XCircle size={24} color="#1E4A44" className="md:hidden" /> : <Menu size={24} color="#1E4A44" className="md:hidden" />}
         </button>
       </div>
 

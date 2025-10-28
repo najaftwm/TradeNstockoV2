@@ -31,7 +31,7 @@ export default function Features() {
           className="text-center mb-6"
         >
           <h2 className="text-4xl md:text-5xl font-extrabold">
-            Why Choose <span className="text-yellow-600">TNS Trading App?</span>
+            Why Choose <span className="text-[#1c71c7]">TNS Trading App?</span>
           </h2>
         </motion.div>
 
@@ -67,8 +67,8 @@ export default function Features() {
               <div className="flex flex-col items-center text-center space-y-5">
                 {/* Icon Circle */}
                 <div className="relative w-16 h-16 flex items-center justify-center">
-                  <div className="absolute inset-0 rounded-full border-4 border-yellow-600"></div>
-                  <feature.icon className="w-8 h-8 text-yellow-600 relative z-10" />
+                  <div className="absolute inset-0 rounded-full border-4 border-[#1c71c7]"></div>
+                  <feature.icon className="w-8 h-8 text-[#1c71c7] relative z-10" />
                 </div>
 
                 {/* Title */}
