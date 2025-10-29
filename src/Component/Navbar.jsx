@@ -20,13 +20,13 @@ export default function Navbar() {
                  md:mx-auto md:left-0 md:right-0
                  max-md:max-w-sm max-md:mx-0 max-md:left-4 max-md:right-auto"
     >
-      <div className="flex items-center justify-between py-3 md:py-3 max-md:py-1.5">
+      <div className="flex items-center justify-between py-4 md:py-5 max-md:py-2">
         {/* === Logo === */}
         <Link to="/" className="flex items-center ml-1 h-12 group md:h-12 max-md:h-9">
           <img
             src={assets.newlogonobg}
             alt="Logo"
-            className="h-20 w-auto transform transition-transform duration-500 ease-in-out group-hover:scale-110 md:h-23 max-md:h-12"
+            className="h-20 w-auto transform transition-transform duration-500 ease-in-out group-hover:scale-110 md:h-22 max-md:h-12"
           />
         </Link>
 

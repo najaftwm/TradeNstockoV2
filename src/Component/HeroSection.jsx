@@ -9,7 +9,7 @@ export default function HeroSection() {
   return (
     <section
       id="home"
-      className="relative flex items-start justify-center min-h-screen bg-[#EDE8D0] overflow-hidden pt-32 lg:pt-40"
+      className="relative flex items-start justify-center min-h-screen bg-gray-100 overflow-hidden pt-32 lg:pt-40 "
     >
       {/* Background Logo with Blur */}
       <div
