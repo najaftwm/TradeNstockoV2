@@ -28,7 +28,7 @@ export default function HowItWorks() {
   return (
     <section
       id="aboutus"
-      className="bg-[#EDE8D0] py-24 flex flex-col items-center justify-center px-6"
+      className="bg-gray-100 py-24 flex flex-col items-center justify-center px-6"
     >
       <motion.h2
         initial={{ opacity: 0, y: 40 }}
@@ -37,7 +37,7 @@ export default function HowItWorks() {
         viewport={{ once: true }}
         className="text-4xl font-extrabold text-black mb-3 text-center"
       >
-        How <span className="text-yellow-600">TradeStocko</span> Works
+        How <span className="text-[#1c71c7]">TradeStocko</span> Works
       </motion.h2>
 
       <p className="text-gray-700 text-center mb-14 max-w-md">
@@ -70,7 +70,7 @@ export default function HowItWorks() {
                 <span className="text-sm font-bold text-gray-600 mb-1">
                   STEP
                 </span>
-                <div className="bg-yellow-500 text-blue-900 font-bold rounded-full w-14 h-14 flex items-center justify-center text-lg border-4 border-[#0071A4] shadow-md">
+                <div className="bg-[#1c71c7] text-white font-bold rounded-full w-14 h-14 flex items-center justify-center text-lg border-4  shadow-lg">
                   {step.number}
                 </div>
               </div>

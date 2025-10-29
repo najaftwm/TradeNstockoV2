@@ -19,7 +19,7 @@ export default function Features() {
   ];
 
   return (
-    <section id="features" className="bg-[#EDE8D0] text-black py-24">
+    <section id="features" className="bg-gray-100 text-black py-24">
       <div className="container mx-auto px-6">
 
         {/* Title */}
