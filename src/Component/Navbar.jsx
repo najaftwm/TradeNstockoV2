@@ -73,7 +73,7 @@ export default function Navbar() {
 
       {/* === Mobile Drawer === */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-48 bg-[#F8F1E9] shadow-lg transform ${
+        className={`md:hidden fixed top-0 right-0 h-full w-48 bg-white shadow-lg transform ${
           isOpen ? "translate-x-0" : "translate-x-full"
         } transition-transform duration-300 ease-in-out z-1`}
       >
@@ -83,7 +83,7 @@ export default function Navbar() {
               key={index}
               to={`/#${item.toLowerCase().replace(/\s/g, "")}`}
               onClick={toggleMenu}
-              className="text-[#1E4A44] hover:text-[#D67F3C] text-lg"
+              className="text-[#1E4A44] hover:text-[#0780f7] text-lg"
             >
               {item}
             </Link>
@@ -91,14 +91,14 @@ export default function Navbar() {
           <Link
             to="/contact-us"
             onClick={toggleMenu}
-            className="text-[#1E4A44] hover:text-[#D67F3C] text-lg"
+            className="text-[#1E4A44] hover:text-[#0780f7] text-lg"
           >
             Contact Us
           </Link>
           <Link
             to="/#register"
             onClick={toggleMenu}
-            className="bg-[#D67F3C] text-[#F8F1E9] px-4 py-2 rounded-md hover:bg-[#D87A3A]"
+            className="bg-[#0780f7] text-white px-4 py-2 rounded-md hover:bg-[#0570e0]"
           >
             Register
           </Link>
