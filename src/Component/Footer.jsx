@@ -82,6 +82,13 @@ export default function Footer() {
                 <li className="hover:text-white transition cursor-pointer">
                   <Link to="/trading-guidelines">Trading Terms</Link>
                 </li>
+                <li className="hover:text-white transition cursor-pointer">
+                  <Link to="/trading-guidelines">Forex trading</Link>
+                </li>
+                <li className="hover:text-white transition cursor-pointer">
+                  <Link to="/trading-guidelines">Crypto Trading </Link>
+                </li>
+
               </ul>
             </div>
 
@@ -147,6 +154,12 @@ export default function Footer() {
                   </li>
                   <li className="hover:text-white transition cursor-pointer">
                     <Link to="/trading-guidelines">Trading Terms</Link>
+                  </li>
+                  <li className="hover:text-white transition cursor-pointer">
+                    <Link to="/trading-guidelines">Forex trading</Link>
+                  </li>
+                  <li className="hover:text-white transition cursor-pointer">
+                    <Link to="/trading-guidelines">Crypto Trading </Link>
                   </li>
                 </ul>
               </div>

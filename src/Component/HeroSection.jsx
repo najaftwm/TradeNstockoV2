@@ -2,7 +2,9 @@ import assets from "../assets/assets";
 import { Users, CheckCircle } from "lucide-react";
 import TraderUsersBadge from "./TraderUsersBadge";
 import { motion } from "framer-motion";
-import { Link, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+
+const MotionDiv = motion.div;
 
 export default function HeroSection() {
   const navigate = useNavigate();
@@ -24,7 +26,7 @@ export default function HeroSection() {
       <div className="relative flex flex-col lg:flex-row items-center justify-between w-full max-w-[1450px] px-4 sm:px-6 md:px-8 z-10 gap-10">
 
         {/* 🟡 Left Side - Text with animation */}
-        <motion.div
+        <MotionDiv
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -38,7 +40,7 @@ export default function HeroSection() {
             <h4 className="text-[#0780f7] font-bold text-2xl uppercase tracking-wider">
               BEST TRADING APP
             </h4>
-            <p className="text-gray-800 text-lg font-semibold">NSE | MCX | OPT</p>
+            <p className="text-gray-800 text-lg font-semibold">NSE | MCX | OPT | FX | Crypto</p>
           </div>
 
           {/* Main Heading */}
@@ -134,10 +136,10 @@ export default function HeroSection() {
             {/* <TraderUsersBadge /> */}
           </div>
 
-        </motion.div>
+        </MotionDiv>
 
         {/* 🟢 Trader Badge Animation */}
-        <motion.div
+        <MotionDiv
           initial={{ x: -200, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{
@@ -147,7 +149,7 @@ export default function HeroSection() {
           className="hidden lg:block absolute top-28 left-[58%] -translate-x-1/2 z-20"
         >
           <TraderUsersBadge />
-        </motion.div>
+        </MotionDiv>
 
         {/* 🔵 Right Side - Girl Image */}
         <div className="flex-1 justify-center lg:flex lg:justify-end hidden">
