@@ -40,7 +40,7 @@ export default function HeroSection() {
             <h4 className="text-[#0780f7] font-bold text-2xl uppercase tracking-wider">
               BEST TRADING APP
             </h4>
-            <p className="text-gray-800 text-lg font-semibold">NSE | MCX | OPT | FX | Crypto</p>
+            <p className="text-gray-800 text-lg font-semibold">NSE | MCX | OPT | FX | Crypto | Commodity | Comex</p>
           </div>
 
           {/* Main Heading */}

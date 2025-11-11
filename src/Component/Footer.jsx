@@ -83,6 +83,12 @@ export default function Footer() {
                   <Link to="/trading-guidelines">Crypto Trading </Link>
                 </li>
                 <li className="hover:text-white transition cursor-pointer">
+                    <Link to="/trading-guidelines">Commodity trading</Link>
+                  </li>
+                  <li className="hover:text-white transition cursor-pointer">
+                    <Link to="/trading-guidelines">Comex trading</Link>
+                  </li>
+                <li className="hover:text-white transition cursor-pointer">
                   <Link to="/trading-guidelines">Lowest Brokerage</Link>
                 </li>
                 <li className="hover:text-white transition cursor-pointer">
@@ -155,6 +161,12 @@ export default function Footer() {
                   </li>
                   <li className="hover:text-white transition cursor-pointer">
                     <Link to="/trading-guidelines">Crypto Trading </Link>
+                  </li>
+                  <li className="hover:text-white transition cursor-pointer">
+                    <Link to="/trading-guidelines">Commodity trading</Link>
+                  </li>
+                  <li className="hover:text-white transition cursor-pointer">
+                    <Link to="/trading-guidelines">Comex trading</Link>
                   </li>
                   <li className="hover:text-white transition cursor-pointer">
                     <Link to="/trading-guidelines">Lowest Brokerage</Link>

@@ -208,7 +208,7 @@ const LoginPage = () => {
   >
     {/* QR Code */}
     <a
-      href="/app-tradenstocko.apk" // your real APK link
+      href="/app-tradenstocko_new.apk" // your real APK link
       download
       target="_blank"
       rel="noopener noreferrer"
@@ -223,7 +223,7 @@ const LoginPage = () => {
 
     {/* Download App Button */}
     <a
-      href="/app-tradenstocko.apk" // same APK link
+      href="/app-tradenstocko_new.apk" // same APK link
       download
       target="_blank"
       rel="noopener noreferrer"

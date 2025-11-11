@@ -25,7 +25,7 @@ export default function FloatingAppLinks({ hideOnHeroMobile = false }) {
       name: "Android App",
       icon: <PlayStoreIcon size={31} />,
       color: "#FFD700", // yellow on hover
-      href: "/app-tradenstocko.apk", // ✅ replace with actual app link
+      href: "/app-tradenstocko_new.apk", // ✅ replace with actual app link
     },
     {
       name: "Desktop Web",
