@@ -21,6 +21,7 @@ const LoginPage = () => {
   const [submitError, setSubmitError] = useState("");
   const [successMessage, setSuccessMessage] = useState("");
   const [otpSentMessage, setOtpSentMessage] = useState("");
+  const [tempId, setTempId] = useState(null);
 
   const AUTH_TOKEN =
     "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJDLTc2OTU0MUI3QjY3QzQ5MSIsImlhdCI6MTc1OTcyNDI0NywiZXhwIjoxOTE3NDA0MjQ3fQ.PuwWxKPkSqhjFXSKPQmXX7kU40BPCXQLqM6PLWNP_p-iq6PdYSEJn--uOyB4vdY2Dr89NrtuMcU-WsI5ih5NoA";
@@ -73,6 +74,38 @@ const LoginPage = () => {
     return Object.keys(newErrors).length === 0;
   };
 
+  const checkPhoneExists = async (phoneNumber, name) => {
+    try {
+      const response = await axios.post(
+        "https://tnscrm.twmresearchalert.com/gateway/leadReg.php",
+        {
+          mode: "checkPhone",
+          phone: phoneNumber,
+          name: name,
+        }
+      );
+
+      if (response.data?.status === "success" && response.data?.tempId) {
+        setTempId(response.data.tempId);
+        return true; // Phone is available
+      }
+      return false;
+    } catch (error) {
+      // Check if phone already exists (409 status)
+      if (error.response?.status === 409) {
+        setSubmitError(
+          error.response?.data?.message || "Phone number already exists"
+        );
+        toast.error("This phone number is already registered");
+        return false;
+      }
+      // Other errors
+      setSubmitError("Failed to check phone number. Please try again.");
+      toast.error("Error checking phone number");
+      return false;
+    }
+  };
+
   const sendOTP = async (phoneNumber) => {
     try {
       const url = "https://cpaas.messagecentral.com/verification/v3/send";
@@ -106,7 +139,8 @@ const LoginPage = () => {
 
   const validateOTP = async (phoneNumber, verificationId, code) => {
     try {
-      const response = await axios.get(
+      // First validate OTP
+      const otpResponse = await axios.get(
         "https://cpaas.messagecentral.com/verification/v3/validateOtp",
         {
           params: {
@@ -120,35 +154,45 @@ const LoginPage = () => {
         }
       );
 
-      const status = response.data?.data?.verificationStatus;
+      const status = otpResponse.data?.data?.verificationStatus;
       if (
-        response.data.responseCode === 200 &&
+        otpResponse.data.responseCode === 200 &&
         status === "VERIFICATION_COMPLETED"
       ) {
         toast.success("OTP verified successfully!");
-        await axios.post(
-          "https://tnscrm.twmresearchalert.com/gateway/leadReg.php",
-          {
-            name: formData.name,
-            phone: phoneNumber,
-            email: formData.email,
-            state: formData.state,
-            language: formData.language,
-          }
-        );
-        toast.success("Lead submitted successfully!");
-        setSuccessMessage(
-          "Successfully registered! Our team will reach out to you shortly to help you get started."
-        );
-        setShowOTPModal(false);
-        setOtp("");
-        setOtpError("");
-        setOtpSentMessage("");
+        
+        // Now submit the lead registration with proper mode and fields
+        try {
+          await axios.post(
+            "https://tnscrm.twmresearchalert.com/gateway/leadReg.php",
+            {
+              mode: "submit",
+              tempId: tempId,
+              state: formData.state,
+              interest: formData.language, // Map language to interest as backend expects
+            }
+          );
+          toast.success("Lead submitted successfully!");
+          setSuccessMessage(
+            "Successfully registered! Our team will reach out to you shortly to help you get started."
+          );
+          setShowOTPModal(false);
+          setOtp("");
+          setOtpError("");
+          setOtpSentMessage("");
+        } catch (regError) {
+          // Handle registration errors separately
+          const errorMessage = regError.response?.data?.message || 
+                              "Failed to complete registration. Please try again.";
+          setOtpError(errorMessage);
+          toast.error(errorMessage);
+        }
       } else {
         setOtpError("Invalid OTP. Please try again.");
         toast.error("OTP verification failed");
       }
     } catch {
+      // Handle OTP validation errors
       setOtpError("Failed to validate OTP. Please try again.");
       toast.error("OTP validation error");
     }
@@ -158,6 +202,17 @@ const LoginPage = () => {
     e.preventDefault();
     if (!validateForm()) return;
     setIsSubmitting(true);
+    setSubmitError("");
+    
+    // First check if phone number exists
+    const phoneAvailable = await checkPhoneExists(formData.phone, formData.name);
+    
+    if (!phoneAvailable) {
+      setIsSubmitting(false);
+      return; // Error already displayed by checkPhoneExists
+    }
+    
+    // If phone is available, send OTP
     await sendOTP(formData.phone);
     setIsSubmitting(false);
   };
