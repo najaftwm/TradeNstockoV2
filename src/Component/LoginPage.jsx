@@ -169,7 +169,7 @@ const LoginPage = () => {
               mode: "submit",
               tempId: tempId,
               state: formData.state,
-              interest: formData.language, // Map language to interest as backend expects
+              language: formData.language, // Map language to interest as backend expects
             }
           );
           toast.success("Lead submitted successfully!");
